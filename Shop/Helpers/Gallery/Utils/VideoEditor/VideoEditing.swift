@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 import Photos
 
-public protocol VideoEditing: class {
+public protocol VideoEditing: AnyObject {
 
   func crop(avAsset: AVAsset, completion: @escaping (URL?) -> Void)
   func edit(video: Video, completion: @escaping (_ video: Video?, _ tempPath: URL?) -> Void)

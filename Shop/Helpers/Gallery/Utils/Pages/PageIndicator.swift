@@ -1,6 +1,6 @@
 import UIKit
 
-protocol PageIndicatorDelegate: class {
+protocol PageIndicatorDelegate: AnyObject {
   func pageIndicator(_ pageIndicator: PageIndicator, didSelect index: Int)
 }
 

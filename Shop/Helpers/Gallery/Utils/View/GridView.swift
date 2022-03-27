@@ -151,7 +151,7 @@ class GridView: UIView {
   }
 
   private func makeLoadingIndicator() -> UIActivityIndicatorView {
-    let view = UIActivityIndicatorView(style: .whiteLarge)
+      let view = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     view.color = .gray
     view.hidesWhenStopped = true
 

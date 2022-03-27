@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-public protocol GalleryControllerDelegate: class {
+public protocol GalleryControllerDelegate: AnyObject {
 
   func galleryController(_ controller: GalleryController, didSelectImages images: [Image])
   func galleryController(_ controller: GalleryController, didSelectVideo video: Video)

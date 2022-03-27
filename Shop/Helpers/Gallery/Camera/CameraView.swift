@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-protocol CameraViewDelegate: class {
+protocol CameraViewDelegate: AnyObject {
   func cameraView(_ cameraView: CameraView, didTouch point: CGPoint)
 }
 

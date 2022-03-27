@@ -1,7 +1,7 @@
 import UIKit
 import Photos
 
-protocol DropdownControllerDelegate: class {
+protocol DropdownControllerDelegate: AnyObject {
   func dropdownController(_ controller: DropdownController, didSelect album: Album)
 }
 

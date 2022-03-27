@@ -1,6 +1,6 @@
 import UIKit
 
-protocol PermissionControllerDelegate: class {
+protocol PermissionControllerDelegate: AnyObject {
   func permissionControllerDidFinish(_ controller: PermissionController)
 }
 

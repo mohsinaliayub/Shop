@@ -1,6 +1,6 @@
 import UIKit
 
-protocol PageAware: class {
+protocol PageAware: AnyObject {
   func pageDidShow()
 }
 

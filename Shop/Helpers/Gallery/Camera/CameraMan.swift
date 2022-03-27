@@ -3,7 +3,7 @@ import AVFoundation
 import PhotosUI
 import Photos
 
-protocol CameraManDelegate: class {
+protocol CameraManDelegate: AnyObject {
   func cameraManNotAvailable(_ cameraMan: CameraMan)
   func cameraManDidStart(_ cameraMan: CameraMan)
   func cameraMan(_ cameraMan: CameraMan, didChangeInput input: AVCaptureDeviceInput)

@@ -703,6 +703,8 @@
 				DEVELOPMENT_TEAM = LJ87H7HMY5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shop/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to access your camera to capture images of your product.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to access pictures for your product.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -731,6 +733,8 @@
 				DEVELOPMENT_TEAM = LJ87H7HMY5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shop/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to access your camera to capture images of your product.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to access pictures for your product.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
