@@ -158,12 +158,96 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="B9m-5y-cRo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Owo-26-17j"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Owo-26-17j">
+                            <connections>
+                                <segue destination="zpr-l8-xAx" kind="show" id="7L7-mk-6l3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuZ-R8-JiB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3466.666666666667" y="-256.47321428571428"/>
+        </scene>
+        <!--Add Item-->
+        <scene sceneID="5pz-Tk-FnN">
+            <objects>
+                <viewController id="zpr-l8-xAx" customClass="AddItemViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M7l-iQ-qmP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQ7-0i-cxg">
+                                <rect key="frame" x="20" y="108" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MZA-jT-Mgg">
+                                <rect key="frame" x="20" y="192" width="374" height="150"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Wc0-J0-YzT"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vt-6L-xwg">
+                                <rect key="frame" x="20" y="350" width="75" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="zpr-l8-xAx" eventType="touchUpInside" id="cfL-AU-vhs"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oKy-5W-gwP">
+                                <rect key="frame" x="20" y="150" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Gf-4e-4iE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="2vt-6L-xwg" firstAttribute="leading" secondItem="5Gf-4e-4iE" secondAttribute="leading" constant="20" id="14E-fj-DNz"/>
+                            <constraint firstItem="MZA-jT-Mgg" firstAttribute="top" secondItem="oKy-5W-gwP" secondAttribute="bottom" constant="8" symbolic="YES" id="5d5-0f-LQK"/>
+                            <constraint firstItem="5Gf-4e-4iE" firstAttribute="trailing" secondItem="MZA-jT-Mgg" secondAttribute="trailing" constant="20" id="67l-Lj-YAM"/>
+                            <constraint firstItem="eQ7-0i-cxg" firstAttribute="leading" secondItem="5Gf-4e-4iE" secondAttribute="leading" constant="20" id="6hD-zX-G9w"/>
+                            <constraint firstItem="MZA-jT-Mgg" firstAttribute="leading" secondItem="5Gf-4e-4iE" secondAttribute="leading" constant="20" id="GCM-CI-LcP"/>
+                            <constraint firstItem="5Gf-4e-4iE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2vt-6L-xwg" secondAttribute="trailing" constant="20" id="LVs-Lt-Vea"/>
+                            <constraint firstItem="5Gf-4e-4iE" firstAttribute="trailing" secondItem="oKy-5W-gwP" secondAttribute="trailing" constant="20" id="SC2-24-gGO"/>
+                            <constraint firstItem="oKy-5W-gwP" firstAttribute="leading" secondItem="5Gf-4e-4iE" secondAttribute="leading" constant="20" id="gRj-nw-xMW"/>
+                            <constraint firstItem="5Gf-4e-4iE" firstAttribute="trailing" secondItem="eQ7-0i-cxg" secondAttribute="trailing" constant="20" id="hcX-o0-FQI"/>
+                            <constraint firstItem="eQ7-0i-cxg" firstAttribute="top" secondItem="5Gf-4e-4iE" secondAttribute="top" constant="20" id="nSp-mr-EhM"/>
+                            <constraint firstItem="2vt-6L-xwg" firstAttribute="top" secondItem="MZA-jT-Mgg" secondAttribute="bottom" constant="8" symbolic="YES" id="pqN-ER-duS"/>
+                            <constraint firstItem="oKy-5W-gwP" firstAttribute="top" secondItem="eQ7-0i-cxg" secondAttribute="bottom" constant="8" symbolic="YES" id="vlB-yl-XTG"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aRm-P5-nn0" appends="YES" id="mho-ru-4EO"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Item" id="9fw-be-8XN">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="bJn-iJ-MO3">
+                            <connections>
+                                <action selector="saveItem:" destination="zpr-l8-xAx" id="1Dx-kj-EG2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="MZA-jT-Mgg" id="wOI-NE-NLc"/>
+                        <outlet property="priceTextField" destination="oKy-5W-gwP" id="i9d-mH-o7Y"/>
+                        <outlet property="titleTextField" destination="eQ7-0i-cxg" id="Vxu-x2-CgH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XiM-yj-BAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aRm-P5-nn0">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="zpr-l8-xAx" id="v5Z-ux-eYK"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="4263.768115942029" y="-256.47321428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Fv7-Jg-DDe">
@@ -205,6 +289,9 @@
     </scenes>
     <resources>
         <image name="imagePlaceholder" width="150" height="113.5"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

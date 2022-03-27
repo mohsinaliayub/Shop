@@ -24,6 +24,7 @@
 		426AD07727F0502A00F420D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07627F0502A00F420D4 /* Constants.swift */; };
 		426AD07927F06FE700F420D4 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */; };
 		426AD07B27F075B600F420D4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07A27F075B600F420D4 /* Item.swift */; };
+		426AD07D27F09C0400F420D4 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07C27F09C0400F420D4 /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		426AD07627F0502A00F420D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		426AD07A27F075B600F420D4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		426AD07C27F09C0400F420D4 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				426AD06A27F04A5E00F420D4 /* CategoryCollectionViewController.swift */,
 				426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */,
+				426AD07C27F09C0400F420D4 /* AddItemViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				426AD04B27F03E1E00F420D4 /* AppDelegate.swift in Sources */,
 				426AD07927F06FE700F420D4 /* ItemsTableViewController.swift in Sources */,
 				426AD07227F04D6B00F420D4 /* FirebaseCollectionReference.swift in Sources */,
+				426AD07D27F09C0400F420D4 /* AddItemViewController.swift in Sources */,
 				426AD04D27F03E1E00F420D4 /* SceneDelegate.swift in Sources */,
 				426AD07727F0502A00F420D4 /* Constants.swift in Sources */,
 				426AD06B27F04A5E00F420D4 /* CategoryCollectionViewController.swift in Sources */,
