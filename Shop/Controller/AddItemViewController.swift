@@ -98,7 +98,18 @@ class AddItemViewController: UIViewController {
         }
         
         let item = Item(categoryId: categoryId, name: name, description: description, price: price)
-        if itemImages.count > 0 {
+        
+        // if we have images, save them to Firebase Storage first and then save the item
+        // to Firebase Firestore. Otherwise, simply save the item object to Firebase Firestore.
+        if !itemImages.isEmpty {
+            
+            // upload the images to Firebase Storage
+            StorageService.shared.uploadImages(images: itemImages, itemId: item.id) { imageLinks in
+                // save links to item object, save the item to Firestore and pop the view
+                item.imageLinks = imageLinks
+                saveItemToFirestore(item)
+                self.popTheView()
+            }
             
         } else {
             saveItemToFirestore(item)

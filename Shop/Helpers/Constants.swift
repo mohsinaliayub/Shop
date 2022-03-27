@@ -8,6 +8,9 @@
 import Foundation
 
 struct Constants {
+    // IDs, Keys and Links
+    static let firebaseStorageLink = "gs://shop-88faf.appspot.com"
+    
     // Firebase Headers - Folder names in Firestore
     static let userPath = "Users"
     static let categoryPath = "Categories"

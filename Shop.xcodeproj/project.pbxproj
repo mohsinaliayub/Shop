@@ -80,6 +80,8 @@
 		426AD0F827F0A48200F420D4 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0C327F0A48200F420D4 /* VideoCell.swift */; };
 		426AD0F927F0A48200F420D4 /* VideoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0C427F0A48200F420D4 /* VideoBox.swift */; };
 		426AD0FA27F0A48200F420D4 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0C527F0A48200F420D4 /* Video.swift */; };
+		426AD0FC27F0B06700F420D4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0FB27F0B06700F420D4 /* Reachability.swift */; };
+		426AD0FE27F0B11300F420D4 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0FD27F0B11300F420D4 /* StorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +154,8 @@
 		426AD0C327F0A48200F420D4 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		426AD0C427F0A48200F420D4 /* VideoBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoBox.swift; sourceTree = "<group>"; };
 		426AD0C527F0A48200F420D4 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		426AD0FB27F0B06700F420D4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		426AD0FD27F0B11300F420D4 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +250,8 @@
 				426AD08427F0A48100F420D4 /* Gallery */,
 				426AD07127F04D6B00F420D4 /* FirebaseCollectionReference.swift */,
 				426AD07627F0502A00F420D4 /* Constants.swift */,
+				426AD0FB27F0B06700F420D4 /* Reachability.swift */,
+				426AD0FD27F0B11300F420D4 /* StorageService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 				426AD0E127F0A48200F420D4 /* UIView+Extensions.swift in Sources */,
 				426AD07B27F075B600F420D4 /* Item.swift in Sources */,
 				426AD0F327F0A48200F420D4 /* Bundle+Resources.swift in Sources */,
+				426AD0FC27F0B06700F420D4 /* Reachability.swift in Sources */,
 				426AD04B27F03E1E00F420D4 /* AppDelegate.swift in Sources */,
 				426AD0F027F0A48200F420D4 /* LocationManager.swift in Sources */,
 				426AD07927F06FE700F420D4 /* ItemsTableViewController.swift in Sources */,
@@ -549,6 +556,7 @@
 				426AD0D227F0A48200F420D4 /* CameraView.swift in Sources */,
 				426AD07527F04E9C00F420D4 /* Category.swift in Sources */,
 				426AD0EB27F0A48200F420D4 /* Utils.swift in Sources */,
+				426AD0FE27F0B11300F420D4 /* StorageService.swift in Sources */,
 				426AD0F527F0A48200F420D4 /* UIBlurEffect+Style.swift in Sources */,
 				426AD0CE27F0A48200F420D4 /* CameraController.swift in Sources */,
 				426AD0CC27F0A48200F420D4 /* GalleryController.swift in Sources */,
