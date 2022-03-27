@@ -18,13 +18,11 @@ class Category {
     }
     
     var dictionary: [String: Any] {
-        let dict: [String: Any] = [
+        [
             Constants.objectId: id,
             Constants.name: name,
             Constants.imageName: imageName as Any
         ]
-        
-        return dict
     }
     
     init(name: String, imageName: String) {

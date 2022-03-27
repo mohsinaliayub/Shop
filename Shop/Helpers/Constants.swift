@@ -18,4 +18,10 @@ struct Constants {
     static let name = "name"
     static let imageName = "imageName"
     static let objectId = "objectId"
+    
+    // Item
+    static let categoryId = "categoryId"
+    static let description = "description"
+    static let price = "price"
+    static let imageLinks = "imageLinks"
 }
