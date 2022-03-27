@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import JGProgressHUD
+import NVActivityIndicatorView
 
 class AddItemViewController: UIViewController {
     

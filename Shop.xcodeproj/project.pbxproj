@@ -25,6 +25,61 @@
 		426AD07927F06FE700F420D4 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */; };
 		426AD07B27F075B600F420D4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07A27F075B600F420D4 /* Item.swift */; };
 		426AD07D27F09C0400F420D4 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07C27F09C0400F420D4 /* AddItemViewController.swift */; };
+		426AD08027F0A32900F420D4 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 426AD07F27F0A32900F420D4 /* JGProgressHUD */; };
+		426AD08327F0A3D900F420D4 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 426AD08227F0A3D900F420D4 /* NVActivityIndicatorView */; };
+		426AD0C627F0A48200F420D4 /* ImagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD08627F0A48100F420D4 /* ImagesController.swift */; };
+		426AD0C727F0A48200F420D4 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD08727F0A48100F420D4 /* Album.swift */; };
+		426AD0C827F0A48200F420D4 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD08827F0A48100F420D4 /* Image.swift */; };
+		426AD0C927F0A48200F420D4 /* ImagesLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD08927F0A48100F420D4 /* ImagesLibrary.swift */; };
+		426AD0CA27F0A48200F420D4 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD08A27F0A48100F420D4 /* Cart.swift */; };
+		426AD0CB27F0A48200F420D4 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD08B27F0A48100F420D4 /* ImageCell.swift */; };
+		426AD0CC27F0A48200F420D4 /* GalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD08C27F0A48100F420D4 /* GalleryController.swift */; };
+		426AD0CD27F0A48200F420D4 /* TripleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD08E27F0A48100F420D4 /* TripleButton.swift */; };
+		426AD0CE27F0A48200F420D4 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD08F27F0A48100F420D4 /* CameraController.swift */; };
+		426AD0CF27F0A48200F420D4 /* ShutterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09027F0A48100F420D4 /* ShutterButton.swift */; };
+		426AD0D027F0A48200F420D4 /* CameraMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09127F0A48100F420D4 /* CameraMan.swift */; };
+		426AD0D127F0A48200F420D4 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09227F0A48100F420D4 /* StackView.swift */; };
+		426AD0D227F0A48200F420D4 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09327F0A48100F420D4 /* CameraView.swift */; };
+		426AD0D327F0A48200F420D4 /* Gallery.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 426AD09527F0A48100F420D4 /* Gallery.bundle */; };
+		426AD0D427F0A48200F420D4 /* Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09727F0A48200F420D4 /* Once.swift */; };
+		426AD0D527F0A48200F420D4 /* DropdownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09927F0A48200F420D4 /* DropdownController.swift */; };
+		426AD0D627F0A48200F420D4 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09A27F0A48200F420D4 /* Constraints.swift */; };
+		426AD0D727F0A48200F420D4 /* AdvancedVideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09C27F0A48200F420D4 /* AdvancedVideoEditor.swift */; };
+		426AD0D827F0A48200F420D4 /* VideoEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09D27F0A48200F420D4 /* VideoEditing.swift */; };
+		426AD0D927F0A48200F420D4 /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09E27F0A48200F420D4 /* VideoEditor.swift */; };
+		426AD0DA27F0A48200F420D4 /* EditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD09F27F0A48200F420D4 /* EditInfo.swift */; };
+		426AD0DB27F0A48200F420D4 /* EventHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0A027F0A48200F420D4 /* EventHub.swift */; };
+		426AD0DC27F0A48200F420D4 /* GalleryBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0A127F0A48200F420D4 /* GalleryBundle.swift */; };
+		426AD0DD27F0A48200F420D4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0A227F0A48200F420D4 /* Config.swift */; };
+		426AD0DE27F0A48200F420D4 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0A427F0A48200F420D4 /* Array+Extensions.swift */; };
+		426AD0DF27F0A48200F420D4 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0A527F0A48200F420D4 /* UIImageView+Extensions.swift */; };
+		426AD0E027F0A48200F420D4 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0A627F0A48200F420D4 /* UIViewController+Extensions.swift */; };
+		426AD0E127F0A48200F420D4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0A727F0A48200F420D4 /* UIView+Extensions.swift */; };
+		426AD0E227F0A48200F420D4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0A827F0A48200F420D4 /* String+Extensions.swift */; };
+		426AD0E327F0A48200F420D4 /* AVAsset+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0A927F0A48200F420D4 /* AVAsset+Extensions.swift */; };
+		426AD0E427F0A48200F420D4 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0AA27F0A48200F420D4 /* UIScrollView+Extensions.swift */; };
+		426AD0E527F0A48200F420D4 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0AC27F0A48200F420D4 /* EmptyView.swift */; };
+		426AD0E627F0A48200F420D4 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0AD27F0A48200F420D4 /* FrameView.swift */; };
+		426AD0E727F0A48200F420D4 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0AE27F0A48200F420D4 /* AlbumCell.swift */; };
+		426AD0E827F0A48200F420D4 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0AF27F0A48200F420D4 /* ArrowButton.swift */; };
+		426AD0E927F0A48200F420D4 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0B027F0A48200F420D4 /* GridView.swift */; };
+		426AD0EA27F0A48200F420D4 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0B127F0A48200F420D4 /* Fetcher.swift */; };
+		426AD0EB27F0A48200F420D4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0B227F0A48200F420D4 /* Utils.swift */; };
+		426AD0EC27F0A48200F420D4 /* OrientationMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0B327F0A48200F420D4 /* OrientationMan.swift */; };
+		426AD0ED27F0A48200F420D4 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0B527F0A48200F420D4 /* Permission.swift */; };
+		426AD0EE27F0A48200F420D4 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0B627F0A48200F420D4 /* PermissionView.swift */; };
+		426AD0EF27F0A48200F420D4 /* PermissionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0B727F0A48200F420D4 /* PermissionController.swift */; };
+		426AD0F027F0A48200F420D4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0B827F0A48200F420D4 /* LocationManager.swift */; };
+		426AD0F127F0A48200F420D4 /* PagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0BA27F0A48200F420D4 /* PagesController.swift */; };
+		426AD0F227F0A48200F420D4 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0BB27F0A48200F420D4 /* PageIndicator.swift */; };
+		426AD0F327F0A48200F420D4 /* Bundle+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0BD27F0A48200F420D4 /* Bundle+Resources.swift */; };
+		426AD0F427F0A48200F420D4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0BE27F0A48200F420D4 /* UIColor.swift */; };
+		426AD0F527F0A48200F420D4 /* UIBlurEffect+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0BF27F0A48200F420D4 /* UIBlurEffect+Style.swift */; };
+		426AD0F627F0A48200F420D4 /* VideosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0C127F0A48200F420D4 /* VideosController.swift */; };
+		426AD0F727F0A48200F420D4 /* VideosLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0C227F0A48200F420D4 /* VideosLibrary.swift */; };
+		426AD0F827F0A48200F420D4 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0C327F0A48200F420D4 /* VideoCell.swift */; };
+		426AD0F927F0A48200F420D4 /* VideoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0C427F0A48200F420D4 /* VideoBox.swift */; };
+		426AD0FA27F0A48200F420D4 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0C527F0A48200F420D4 /* Video.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +99,59 @@
 		426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		426AD07A27F075B600F420D4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		426AD07C27F09C0400F420D4 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		426AD08627F0A48100F420D4 /* ImagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesController.swift; sourceTree = "<group>"; };
+		426AD08727F0A48100F420D4 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		426AD08827F0A48100F420D4 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		426AD08927F0A48100F420D4 /* ImagesLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesLibrary.swift; sourceTree = "<group>"; };
+		426AD08A27F0A48100F420D4 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		426AD08B27F0A48100F420D4 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		426AD08C27F0A48100F420D4 /* GalleryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryController.swift; sourceTree = "<group>"; };
+		426AD08E27F0A48100F420D4 /* TripleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripleButton.swift; sourceTree = "<group>"; };
+		426AD08F27F0A48100F420D4 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		426AD09027F0A48100F420D4 /* ShutterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShutterButton.swift; sourceTree = "<group>"; };
+		426AD09127F0A48100F420D4 /* CameraMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraMan.swift; sourceTree = "<group>"; };
+		426AD09227F0A48100F420D4 /* StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		426AD09327F0A48100F420D4 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		426AD09527F0A48100F420D4 /* Gallery.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Gallery.bundle; sourceTree = "<group>"; };
+		426AD09727F0A48200F420D4 /* Once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Once.swift; sourceTree = "<group>"; };
+		426AD09927F0A48200F420D4 /* DropdownController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownController.swift; sourceTree = "<group>"; };
+		426AD09A27F0A48200F420D4 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		426AD09C27F0A48200F420D4 /* AdvancedVideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedVideoEditor.swift; sourceTree = "<group>"; };
+		426AD09D27F0A48200F420D4 /* VideoEditing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditing.swift; sourceTree = "<group>"; };
+		426AD09E27F0A48200F420D4 /* VideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
+		426AD09F27F0A48200F420D4 /* EditInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfo.swift; sourceTree = "<group>"; };
+		426AD0A027F0A48200F420D4 /* EventHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHub.swift; sourceTree = "<group>"; };
+		426AD0A127F0A48200F420D4 /* GalleryBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryBundle.swift; sourceTree = "<group>"; };
+		426AD0A227F0A48200F420D4 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		426AD0A427F0A48200F420D4 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		426AD0A527F0A48200F420D4 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		426AD0A627F0A48200F420D4 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		426AD0A727F0A48200F420D4 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		426AD0A827F0A48200F420D4 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		426AD0A927F0A48200F420D4 /* AVAsset+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsset+Extensions.swift"; sourceTree = "<group>"; };
+		426AD0AA27F0A48200F420D4 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
+		426AD0AC27F0A48200F420D4 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		426AD0AD27F0A48200F420D4 /* FrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
+		426AD0AE27F0A48200F420D4 /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		426AD0AF27F0A48200F420D4 /* ArrowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
+		426AD0B027F0A48200F420D4 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		426AD0B127F0A48200F420D4 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		426AD0B227F0A48200F420D4 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		426AD0B327F0A48200F420D4 /* OrientationMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrientationMan.swift; sourceTree = "<group>"; };
+		426AD0B527F0A48200F420D4 /* Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
+		426AD0B627F0A48200F420D4 /* PermissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
+		426AD0B727F0A48200F420D4 /* PermissionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionController.swift; sourceTree = "<group>"; };
+		426AD0B827F0A48200F420D4 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		426AD0BA27F0A48200F420D4 /* PagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesController.swift; sourceTree = "<group>"; };
+		426AD0BB27F0A48200F420D4 /* PageIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
+		426AD0BD27F0A48200F420D4 /* Bundle+Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Resources.swift"; sourceTree = "<group>"; };
+		426AD0BE27F0A48200F420D4 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		426AD0BF27F0A48200F420D4 /* UIBlurEffect+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBlurEffect+Style.swift"; sourceTree = "<group>"; };
+		426AD0C127F0A48200F420D4 /* VideosController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosController.swift; sourceTree = "<group>"; };
+		426AD0C227F0A48200F420D4 /* VideosLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosLibrary.swift; sourceTree = "<group>"; };
+		426AD0C327F0A48200F420D4 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		426AD0C427F0A48200F420D4 /* VideoBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoBox.swift; sourceTree = "<group>"; };
+		426AD0C527F0A48200F420D4 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +161,10 @@
 			files = (
 				426AD06327F047A900F420D4 /* FirebaseAnalytics in Frameworks */,
 				426AD06927F047A900F420D4 /* FirebaseStorage in Frameworks */,
+				426AD08327F0A3D900F420D4 /* NVActivityIndicatorView in Frameworks */,
 				426AD06527F047A900F420D4 /* FirebaseAuth in Frameworks */,
 				426AD06727F047A900F420D4 /* FirebaseFirestore in Frameworks */,
+				426AD08027F0A32900F420D4 /* JGProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,10 +243,167 @@
 		426AD07327F04E5B00F420D4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				426AD08427F0A48100F420D4 /* Gallery */,
 				426AD07127F04D6B00F420D4 /* FirebaseCollectionReference.swift */,
 				426AD07627F0502A00F420D4 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		426AD08427F0A48100F420D4 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				426AD08527F0A48100F420D4 /* Images */,
+				426AD08C27F0A48100F420D4 /* GalleryController.swift */,
+				426AD08D27F0A48100F420D4 /* Camera */,
+				426AD09427F0A48100F420D4 /* Resources */,
+				426AD09627F0A48200F420D4 /* Utils */,
+				426AD0BC27F0A48200F420D4 /* Extensions */,
+				426AD0C027F0A48200F420D4 /* Videos */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		426AD08527F0A48100F420D4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				426AD08627F0A48100F420D4 /* ImagesController.swift */,
+				426AD08727F0A48100F420D4 /* Album.swift */,
+				426AD08827F0A48100F420D4 /* Image.swift */,
+				426AD08927F0A48100F420D4 /* ImagesLibrary.swift */,
+				426AD08A27F0A48100F420D4 /* Cart.swift */,
+				426AD08B27F0A48100F420D4 /* ImageCell.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		426AD08D27F0A48100F420D4 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				426AD08E27F0A48100F420D4 /* TripleButton.swift */,
+				426AD08F27F0A48100F420D4 /* CameraController.swift */,
+				426AD09027F0A48100F420D4 /* ShutterButton.swift */,
+				426AD09127F0A48100F420D4 /* CameraMan.swift */,
+				426AD09227F0A48100F420D4 /* StackView.swift */,
+				426AD09327F0A48100F420D4 /* CameraView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		426AD09427F0A48100F420D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				426AD09527F0A48100F420D4 /* Gallery.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		426AD09627F0A48200F420D4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				426AD09727F0A48200F420D4 /* Once.swift */,
+				426AD09827F0A48200F420D4 /* Dropdown */,
+				426AD09A27F0A48200F420D4 /* Constraints.swift */,
+				426AD09B27F0A48200F420D4 /* VideoEditor */,
+				426AD0A027F0A48200F420D4 /* EventHub.swift */,
+				426AD0A127F0A48200F420D4 /* GalleryBundle.swift */,
+				426AD0A227F0A48200F420D4 /* Config.swift */,
+				426AD0A327F0A48200F420D4 /* Extensions */,
+				426AD0AB27F0A48200F420D4 /* View */,
+				426AD0B127F0A48200F420D4 /* Fetcher.swift */,
+				426AD0B227F0A48200F420D4 /* Utils.swift */,
+				426AD0B327F0A48200F420D4 /* OrientationMan.swift */,
+				426AD0B427F0A48200F420D4 /* Permission */,
+				426AD0B827F0A48200F420D4 /* LocationManager.swift */,
+				426AD0B927F0A48200F420D4 /* Pages */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		426AD09827F0A48200F420D4 /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				426AD09927F0A48200F420D4 /* DropdownController.swift */,
+			);
+			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		426AD09B27F0A48200F420D4 /* VideoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				426AD09C27F0A48200F420D4 /* AdvancedVideoEditor.swift */,
+				426AD09D27F0A48200F420D4 /* VideoEditing.swift */,
+				426AD09E27F0A48200F420D4 /* VideoEditor.swift */,
+				426AD09F27F0A48200F420D4 /* EditInfo.swift */,
+			);
+			path = VideoEditor;
+			sourceTree = "<group>";
+		};
+		426AD0A327F0A48200F420D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				426AD0A427F0A48200F420D4 /* Array+Extensions.swift */,
+				426AD0A527F0A48200F420D4 /* UIImageView+Extensions.swift */,
+				426AD0A627F0A48200F420D4 /* UIViewController+Extensions.swift */,
+				426AD0A727F0A48200F420D4 /* UIView+Extensions.swift */,
+				426AD0A827F0A48200F420D4 /* String+Extensions.swift */,
+				426AD0A927F0A48200F420D4 /* AVAsset+Extensions.swift */,
+				426AD0AA27F0A48200F420D4 /* UIScrollView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		426AD0AB27F0A48200F420D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				426AD0AC27F0A48200F420D4 /* EmptyView.swift */,
+				426AD0AD27F0A48200F420D4 /* FrameView.swift */,
+				426AD0AE27F0A48200F420D4 /* AlbumCell.swift */,
+				426AD0AF27F0A48200F420D4 /* ArrowButton.swift */,
+				426AD0B027F0A48200F420D4 /* GridView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		426AD0B427F0A48200F420D4 /* Permission */ = {
+			isa = PBXGroup;
+			children = (
+				426AD0B527F0A48200F420D4 /* Permission.swift */,
+				426AD0B627F0A48200F420D4 /* PermissionView.swift */,
+				426AD0B727F0A48200F420D4 /* PermissionController.swift */,
+			);
+			path = Permission;
+			sourceTree = "<group>";
+		};
+		426AD0B927F0A48200F420D4 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				426AD0BA27F0A48200F420D4 /* PagesController.swift */,
+				426AD0BB27F0A48200F420D4 /* PageIndicator.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		426AD0BC27F0A48200F420D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				426AD0BD27F0A48200F420D4 /* Bundle+Resources.swift */,
+				426AD0BE27F0A48200F420D4 /* UIColor.swift */,
+				426AD0BF27F0A48200F420D4 /* UIBlurEffect+Style.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		426AD0C027F0A48200F420D4 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				426AD0C127F0A48200F420D4 /* VideosController.swift */,
+				426AD0C227F0A48200F420D4 /* VideosLibrary.swift */,
+				426AD0C327F0A48200F420D4 /* VideoCell.swift */,
+				426AD0C427F0A48200F420D4 /* VideoBox.swift */,
+				426AD0C527F0A48200F420D4 /* Video.swift */,
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +427,8 @@
 				426AD06427F047A900F420D4 /* FirebaseAuth */,
 				426AD06627F047A900F420D4 /* FirebaseFirestore */,
 				426AD06827F047A900F420D4 /* FirebaseStorage */,
+				426AD07F27F0A32900F420D4 /* JGProgressHUD */,
+				426AD08227F0A3D900F420D4 /* NVActivityIndicatorView */,
 			);
 			productName = Shop;
 			productReference = 426AD04727F03E1E00F420D4 /* Shop.app */;
@@ -191,6 +460,8 @@
 			mainGroup = 426AD03E27F03E1E00F420D4;
 			packageReferences = (
 				426AD06127F047A900F420D4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				426AD07E27F0A32900F420D4 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				426AD08127F0A3D900F420D4 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 426AD04827F03E1E00F420D4 /* Products */;
 			projectDirPath = "";
@@ -208,6 +479,7 @@
 			files = (
 				426AD05727F03E1F00F420D4 /* LaunchScreen.storyboard in Resources */,
 				426AD07027F04C2400F420D4 /* GoogleService-Info.plist in Resources */,
+				426AD0D327F0A48200F420D4 /* Gallery.bundle in Resources */,
 				426AD05427F03E1F00F420D4 /* Assets.xcassets in Resources */,
 				426AD05227F03E1E00F420D4 /* Main.storyboard in Resources */,
 			);
@@ -221,15 +493,67 @@
 			buildActionMask = 2147483647;
 			files = (
 				426AD06E27F04AF600F420D4 /* CategoryCollectionViewCell.swift in Sources */,
+				426AD0D127F0A48200F420D4 /* StackView.swift in Sources */,
+				426AD0F927F0A48200F420D4 /* VideoBox.swift in Sources */,
+				426AD0D427F0A48200F420D4 /* Once.swift in Sources */,
+				426AD0EA27F0A48200F420D4 /* Fetcher.swift in Sources */,
+				426AD0DA27F0A48200F420D4 /* EditInfo.swift in Sources */,
+				426AD0F827F0A48200F420D4 /* VideoCell.swift in Sources */,
+				426AD0E027F0A48200F420D4 /* UIViewController+Extensions.swift in Sources */,
+				426AD0E327F0A48200F420D4 /* AVAsset+Extensions.swift in Sources */,
+				426AD0D027F0A48200F420D4 /* CameraMan.swift in Sources */,
+				426AD0CF27F0A48200F420D4 /* ShutterButton.swift in Sources */,
+				426AD0E127F0A48200F420D4 /* UIView+Extensions.swift in Sources */,
 				426AD07B27F075B600F420D4 /* Item.swift in Sources */,
+				426AD0F327F0A48200F420D4 /* Bundle+Resources.swift in Sources */,
 				426AD04B27F03E1E00F420D4 /* AppDelegate.swift in Sources */,
+				426AD0F027F0A48200F420D4 /* LocationManager.swift in Sources */,
 				426AD07927F06FE700F420D4 /* ItemsTableViewController.swift in Sources */,
+				426AD0E627F0A48200F420D4 /* FrameView.swift in Sources */,
 				426AD07227F04D6B00F420D4 /* FirebaseCollectionReference.swift in Sources */,
+				426AD0F227F0A48200F420D4 /* PageIndicator.swift in Sources */,
+				426AD0F727F0A48200F420D4 /* VideosLibrary.swift in Sources */,
 				426AD07D27F09C0400F420D4 /* AddItemViewController.swift in Sources */,
+				426AD0C827F0A48200F420D4 /* Image.swift in Sources */,
+				426AD0CA27F0A48200F420D4 /* Cart.swift in Sources */,
+				426AD0D827F0A48200F420D4 /* VideoEditing.swift in Sources */,
+				426AD0F127F0A48200F420D4 /* PagesController.swift in Sources */,
 				426AD04D27F03E1E00F420D4 /* SceneDelegate.swift in Sources */,
+				426AD0EF27F0A48200F420D4 /* PermissionController.swift in Sources */,
+				426AD0DF27F0A48200F420D4 /* UIImageView+Extensions.swift in Sources */,
+				426AD0D527F0A48200F420D4 /* DropdownController.swift in Sources */,
+				426AD0D727F0A48200F420D4 /* AdvancedVideoEditor.swift in Sources */,
+				426AD0EC27F0A48200F420D4 /* OrientationMan.swift in Sources */,
+				426AD0F427F0A48200F420D4 /* UIColor.swift in Sources */,
 				426AD07727F0502A00F420D4 /* Constants.swift in Sources */,
+				426AD0EE27F0A48200F420D4 /* PermissionView.swift in Sources */,
+				426AD0D927F0A48200F420D4 /* VideoEditor.swift in Sources */,
+				426AD0F627F0A48200F420D4 /* VideosController.swift in Sources */,
+				426AD0C927F0A48200F420D4 /* ImagesLibrary.swift in Sources */,
+				426AD0CD27F0A48200F420D4 /* TripleButton.swift in Sources */,
 				426AD06B27F04A5E00F420D4 /* CategoryCollectionViewController.swift in Sources */,
+				426AD0E827F0A48200F420D4 /* ArrowButton.swift in Sources */,
+				426AD0E527F0A48200F420D4 /* EmptyView.swift in Sources */,
+				426AD0D627F0A48200F420D4 /* Constraints.swift in Sources */,
+				426AD0E427F0A48200F420D4 /* UIScrollView+Extensions.swift in Sources */,
+				426AD0DB27F0A48200F420D4 /* EventHub.swift in Sources */,
+				426AD0DC27F0A48200F420D4 /* GalleryBundle.swift in Sources */,
+				426AD0DE27F0A48200F420D4 /* Array+Extensions.swift in Sources */,
+				426AD0FA27F0A48200F420D4 /* Video.swift in Sources */,
+				426AD0ED27F0A48200F420D4 /* Permission.swift in Sources */,
+				426AD0C627F0A48200F420D4 /* ImagesController.swift in Sources */,
+				426AD0DD27F0A48200F420D4 /* Config.swift in Sources */,
+				426AD0E727F0A48200F420D4 /* AlbumCell.swift in Sources */,
+				426AD0CB27F0A48200F420D4 /* ImageCell.swift in Sources */,
+				426AD0E227F0A48200F420D4 /* String+Extensions.swift in Sources */,
+				426AD0D227F0A48200F420D4 /* CameraView.swift in Sources */,
 				426AD07527F04E9C00F420D4 /* Category.swift in Sources */,
+				426AD0EB27F0A48200F420D4 /* Utils.swift in Sources */,
+				426AD0F527F0A48200F420D4 /* UIBlurEffect+Style.swift in Sources */,
+				426AD0CE27F0A48200F420D4 /* CameraController.swift in Sources */,
+				426AD0CC27F0A48200F420D4 /* GalleryController.swift in Sources */,
+				426AD0E927F0A48200F420D4 /* GridView.swift in Sources */,
+				426AD0C727F0A48200F420D4 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +781,22 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		426AD07E27F0A32900F420D4 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		426AD08127F0A3D900F420D4 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -479,6 +819,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 426AD06127F047A900F420D4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		426AD07F27F0A32900F420D4 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 426AD07E27F0A32900F420D4 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
+		426AD08227F0A3D900F420D4 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 426AD08127F0A3D900F420D4 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
