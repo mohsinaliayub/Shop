@@ -22,6 +22,7 @@
 		426AD07227F04D6B00F420D4 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07127F04D6B00F420D4 /* FirebaseCollectionReference.swift */; };
 		426AD07527F04E9C00F420D4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07427F04E9C00F420D4 /* Category.swift */; };
 		426AD07727F0502A00F420D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07627F0502A00F420D4 /* Constants.swift */; };
+		426AD07927F06FE700F420D4 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		426AD07127F04D6B00F420D4 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		426AD07427F04E9C00F420D4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		426AD07627F0502A00F420D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				426AD06A27F04A5E00F420D4 /* CategoryCollectionViewController.swift */,
+				426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			files = (
 				426AD06E27F04AF600F420D4 /* CategoryCollectionViewCell.swift in Sources */,
 				426AD04B27F03E1E00F420D4 /* AppDelegate.swift in Sources */,
+				426AD07927F06FE700F420D4 /* ItemsTableViewController.swift in Sources */,
 				426AD07227F04D6B00F420D4 /* FirebaseCollectionReference.swift in Sources */,
 				426AD04D27F03E1E00F420D4 /* SceneDelegate.swift in Sources */,
 				426AD07727F0502A00F420D4 /* Constants.swift in Sources */,

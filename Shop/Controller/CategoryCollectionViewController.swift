@@ -11,6 +11,7 @@ class CategoryCollectionViewController: UICollectionViewController {
     
     // properties
     private let reuseIdentifier = "CategoryCell"
+    private let categoryToItemsSegue = "categoryToItemsSegue"
     private let sectionInsets = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
     private let itemsPerRow: CGFloat = 3
     
@@ -44,8 +45,23 @@ class CategoryCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
     
-        cell.loadCell(with: categories[indexPath.row])
+        cell.generateCell(with: categories[indexPath.row])
         return cell
+    }
+    
+    // MARK: UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: categoryToItemsSegue, sender: categories[indexPath.row])
+    }
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == categoryToItemsSegue,
+           let itemViewController = segue.destination as? ItemsTableViewController {
+            itemViewController.category = (sender as! Category)
+        }
     }
     
     // MARK: Download categories
