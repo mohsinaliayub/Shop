@@ -24,11 +24,30 @@ class AddItemViewController: UIViewController {
     var categoryId: String!
     var itemImages = [UIImage?]()
     
+    // MARK: View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("Category Id: \(String(describing: categoryId))")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let activityIndicatorFrame = CGRect(x: view.frame.width / 2 - 30,
+                                            y: view.frame.height / 2 - 30,
+                                            width: 60, height: 60)
+        let activityIndicatorColor = UIColor(red: 0.9998469949, green: 0.4941213727,
+                                             blue: 0.4734867811, alpha: 1)
+        activityIndicator = NVActivityIndicatorView(frame: activityIndicatorFrame,
+                                                    type: .ballPulse,
+                                                    color: activityIndicatorColor,
+                                                    padding: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
     }
     
     // MARK: Actions
@@ -37,8 +56,11 @@ class AddItemViewController: UIViewController {
         dismissKeyboard()
         
         guard fieldsAreCompleted() else {
-            print("Error: All fields are required!")
-            // TODO: Show error to the user
+            hud.textLabel.text = "All fields are required!"
+            hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            hud.show(in: view)
+            hud.dismiss(afterDelay: 2.0)
+            
             return
         }
         
@@ -87,6 +109,21 @@ class AddItemViewController: UIViewController {
         present(gallery, animated: true)
     }
     
+    // MARK: Activity Indicator
+    private func showLoadingIndicator() {
+        guard let activityIndicator = activityIndicator else {
+            return
+        }
+
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+    }
+    
+    private func hideLoadingIndicator() {
+        activityIndicator?.removeFromSuperview()
+        activityIndicator?.stopAnimating()
+    }
+    
     // MARK: Save Item to Firestore
     
     private func saveToFirestore() {
@@ -99,6 +136,8 @@ class AddItemViewController: UIViewController {
         
         let item = Item(categoryId: categoryId, name: name, description: description, price: price)
         
+        showLoadingIndicator()
+        
         // if we have images, save them to Firebase Storage first and then save the item
         // to Firebase Firestore. Otherwise, simply save the item object to Firebase Firestore.
         if !itemImages.isEmpty {
@@ -108,11 +147,13 @@ class AddItemViewController: UIViewController {
                 // save links to item object, save the item to Firestore and pop the view
                 item.imageLinks = imageLinks
                 saveItemToFirestore(item)
+                self.hideLoadingIndicator()
                 self.popTheView()
             }
             
         } else {
             saveItemToFirestore(item)
+            hideLoadingIndicator()
             popTheView()
         }
     }
