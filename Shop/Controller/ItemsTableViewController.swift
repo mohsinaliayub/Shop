@@ -10,17 +10,12 @@ import UIKit
 class ItemsTableViewController: UITableViewController {
     
     // properties
+    private let addItemSegue = "addItemSegue"
+    
     var category: Category!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(category.name)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -84,7 +79,10 @@ class ItemsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == addItemSegue,
+           let addItemViewController = segue.destination as? AddItemViewController {
+            addItemViewController.categoryId = category.id
+        }
     }
 
 }

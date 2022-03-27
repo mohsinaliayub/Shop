@@ -160,7 +160,7 @@
                     <navigationItem key="navigationItem" id="B9m-5y-cRo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Owo-26-17j">
                             <connections>
-                                <segue destination="zpr-l8-xAx" kind="show" id="7L7-mk-6l3"/>
+                                <segue destination="zpr-l8-xAx" kind="show" identifier="addItemSegue" id="7L7-mk-6l3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
