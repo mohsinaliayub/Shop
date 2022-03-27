@@ -11,6 +11,8 @@ class CategoryCollectionViewController: UICollectionViewController {
     
     // properties
     private let reuseIdentifier = "CategoryCell"
+    private let sectionInsets = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
+    private let itemsPerRow: CGFloat = 3
     
     var categories = [Category]() {
         didSet {
@@ -42,6 +44,7 @@ class CategoryCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
     
+        cell.loadCell(with: categories[indexPath.row])
         return cell
     }
     
@@ -66,4 +69,23 @@ class CategoryCollectionViewController: UICollectionViewController {
         
     }
 
+}
+
+extension CategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = floor(availableWidth / itemsPerRow)
+        
+        return CGSize(width: widthPerItem, height: widthPerItem) // square cells
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        sectionInsets.left
+    }
 }

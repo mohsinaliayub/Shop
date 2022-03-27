@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tu3-VO-I6i">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tu3-VO-I6i">
                             <size key="itemSize" width="115" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -54,7 +54,7 @@
                                                 <constraint firstAttribute="height" constant="75" id="oum-Kt-yqz"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-qX-2d8">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-qX-2d8">
                                             <rect key="frame" x="8" y="86" width="99" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42" id="kfD-Ew-MFF"/>
@@ -73,6 +73,10 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="115" height="128"/>
+                                <connections>
+                                    <outlet property="categoryImage" destination="7vS-jb-leW" id="hj5-EM-r88"/>
+                                    <outlet property="nameLabel" destination="4Ce-qX-2d8" id="yZv-2K-tiM"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
