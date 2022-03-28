@@ -25,7 +25,18 @@ class ItemTableViewCell: UITableViewCell {
         descriptionLabel.text = item.description
         priceLabel.text = String(item.price)
         
-        // TODO: Download and display image
+        if !item.imageLinks.isEmpty {
+            StorageService.shared.downloadImages(fromUrls: [item.imageLinks.first!]) { images in
+                if images.isEmpty {
+                    print("We didn't receive any image")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.itemImageView.image = images[0]
+                }
+            }
+        }
     }
     
 

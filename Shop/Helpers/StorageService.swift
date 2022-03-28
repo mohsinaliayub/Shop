@@ -83,6 +83,33 @@ class StorageService {
             }
         }
     }
+    
+    func downloadImages(fromUrls imageUrls: [String], completion: @escaping (_ images: [UIImage?]) -> Void) {
+        var images = [UIImage?]()
+        
+        var downloadCounter = 0
+        
+        for link in imageUrls {
+            let url = URL(string: link)
+            let downloadQueue = DispatchQueue(label: "imageDownloadQueue")
+            
+            downloadQueue.async {
+                downloadCounter += 1
+                
+                let data = try? Data(contentsOf: url!)
+                if let data = data {
+                    images.append(UIImage(data: data))
+                    
+                    if downloadCounter == imageUrls.count {
+                        completion(images)
+                    }
+                } else {
+                    print("Couldn't download image")
+                    completion(images)
+                }
+            }
+        }
+    }
 }
 
 
