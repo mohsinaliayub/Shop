@@ -79,14 +79,25 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordPressed(_ sender: UIButton) {
-        print("forgot password")
+        guard let email = emailTextField.text, !email.isEmpty else {
+            showErrorHUD(withText: "Email field must not be empty!")
+            return
+        }
+        
+        resetPassword()
     }
     
     @IBAction func resendEmailButtonPressed(_ sender: UIButton) {
-        print("resend email")
+        
+        guard let email = emailTextField.text, !email.isEmpty else {
+            showErrorHUD(withText: "Email field must not be empty!")
+            return
+        }
+        
+        resetPassword()
     }
     
-    // MARK: Register user
+    // MARK: Login, Register user
     
     private func loginUser() {
         showLoadingIndicator()
@@ -106,6 +117,7 @@ class LoginViewController: UIViewController {
                 self.dismissVC()
             } else {
                 self.showErrorHUD(withText: "Please verify your email!")
+                self.resendEmailButton.isHidden = false
             }
         }
     }
@@ -130,6 +142,23 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: Helper methods
+    
+    private func resetPassword() {
+        guard let email = emailTextField.text, !email.isEmpty else {
+            showErrorHUD(withText: "Email field must not be empty!")
+            return
+        }
+        
+        User.resetPassword(forEmail: email) { error in
+            if let error = error {
+                self.showErrorHUD(withText: error.localizedDescription)
+                return
+            }
+            
+            self.showHUD(withIndicator: JGProgressHUDSuccessIndicatorView(),
+                         andText: "Reset password link has been sent to your email!")
+        }
+    }
     
     private func dismissVC() {
         dismiss(animated: true)

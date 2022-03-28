@@ -109,12 +109,30 @@ class User {
                 }
                 completion(error)
             }
-            
         }
-        
+    }
+    
+    // MARK: - Resend link methods
+    class func resetPassword(forEmail email: String, completion: @escaping (_ error: Error?) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            completion(error)
+        }
+    }
+    
+    class func resendVerificationEmail(email: String, completion: @escaping(Error?) -> Void) {
+        Auth.auth().currentUser?.reload(completion: { error in
+            Auth.auth().currentUser?.sendEmailVerification(completion: { error in
+                completion(error)
+            })
+        })
     }
     
 }
+
+
+
+
+
 
 // MARK: - Save & Retrieve User Info from Firebase Firestore
 
