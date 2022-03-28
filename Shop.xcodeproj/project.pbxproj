@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421F360127F1B5E1000EC6DF /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421F360027F1B5E1000EC6DF /* Basket.swift */; };
 		426AD04B27F03E1E00F420D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD04A27F03E1E00F420D4 /* AppDelegate.swift */; };
 		426AD04D27F03E1E00F420D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD04C27F03E1E00F420D4 /* SceneDelegate.swift */; };
 		426AD05227F03E1E00F420D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426AD05027F03E1E00F420D4 /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		421F360027F1B5E1000EC6DF /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		426AD04727F03E1E00F420D4 /* Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426AD04A27F03E1E00F420D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		426AD04C27F03E1E00F420D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				426AD07427F04E9C00F420D4 /* Category.swift */,
 				426AD07A27F075B600F420D4 /* Item.swift */,
+				421F360027F1B5E1000EC6DF /* Basket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				426AD0CB27F0A48200F420D4 /* ImageCell.swift in Sources */,
 				426AD0E227F0A48200F420D4 /* String+Extensions.swift in Sources */,
 				426AD0D227F0A48200F420D4 /* CameraView.swift in Sources */,
+				421F360127F1B5E1000EC6DF /* Basket.swift in Sources */,
 				426AD07527F04E9C00F420D4 /* Category.swift in Sources */,
 				426AD0EB27F0A48200F420D4 /* Utils.swift in Sources */,
 				426AD0FE27F0B11300F420D4 /* StorageService.swift in Sources */,
