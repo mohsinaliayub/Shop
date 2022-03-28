@@ -84,6 +84,7 @@
 		426AD0FE27F0B11300F420D4 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0FD27F0B11300F420D4 /* StorageService.swift */; };
 		42C80FA127F1985200779907 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA027F1985200779907 /* ItemTableViewCell.swift */; };
 		42C80FA327F19D6000779907 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA227F19D6000779907 /* HelperFunctions.swift */; };
+		42C80FA527F1A13800779907 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA427F1A13800779907 /* ItemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +161,7 @@
 		426AD0FD27F0B11300F420D4 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		42C80FA027F1985200779907 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		42C80FA227F19D6000779907 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		42C80FA427F1A13800779907 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				426AD06A27F04A5E00F420D4 /* CategoryCollectionViewController.swift */,
 				426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */,
 				426AD07C27F09C0400F420D4 /* AddItemViewController.swift */,
+				42C80FA427F1A13800779907 /* ItemDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				426AD0D827F0A48200F420D4 /* VideoEditing.swift in Sources */,
 				426AD0F127F0A48200F420D4 /* PagesController.swift in Sources */,
 				426AD04D27F03E1E00F420D4 /* SceneDelegate.swift in Sources */,
+				42C80FA527F1A13800779907 /* ItemDetailViewController.swift in Sources */,
 				426AD0EF27F0A48200F420D4 /* PermissionController.swift in Sources */,
 				426AD0DF27F0A48200F420D4 /* UIImageView+Extensions.swift in Sources */,
 				426AD0D527F0A48200F420D4 /* DropdownController.swift in Sources */,
