@@ -75,6 +75,57 @@ class ItemDetailViewController: UIViewController {
     
     @objc private func addToBasket() {
         
+        // TODO: check if the user is logged in or show login view
+        
+        downloadBasketFromFirestore(for: "1234") { basket, error in
+            if let _ = error {
+                // handle the error and display to user
+            }
+            
+            // if we have no basket, create a basket
+            guard let basket = basket else {
+                self.createNewBasket()
+                return
+            }
+
+            // append items to our basket and update our basket
+            basket.itemIds.append(self.item.id)
+            self.updateBasket(basket, withValues: [Constants.itemIds : basket.itemIds])
+        }
+    }
+    
+    // MARK: - Add to basket
+    
+    private func createNewBasket() {
+        let newBasket = Basket(ownerId: "1234")
+        newBasket.itemIds = [ item.id ]
+        
+        saveBasketToFirestore(newBasket)
+        
+        showHUD(withText: "Added to basket")
+    }
+    
+    private func updateBasket(_ basket: Basket, withValues values: [String: Any]) {
+        updateBasketInFirestore(basket, withValues: values) { error in
+            // Error happened, handle it
+            if let error = error {
+                // TODO: show a more useful error
+                self.showHUD(withText: "Error: \(error.localizedDescription)",
+                             andIndicator: JGProgressHUDErrorIndicatorView())
+                return
+            }
+            
+            // show success information to the user
+            self.showHUD(withText: "Added to basket")
+        }
+    }
+    
+    // MARK: - Helper methods
+    private func showHUD(withText text: String, andIndicator indicatorView: JGProgressHUDIndicatorView = JGProgressHUDSuccessIndicatorView()) {
+        self.hud.textLabel.text = text
+        self.hud.indicatorView = indicatorView
+        self.hud.show(in: view)
+        self.hud.dismiss(afterDelay: 2.0)
     }
     
     // MARK: - Navigation

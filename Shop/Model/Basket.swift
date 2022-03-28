@@ -20,8 +20,8 @@ class Basket {
         ]
     }
     
-    init(id: String, ownerId: String) {
-        self.id = id
+    init(ownerId: String) {
+        self.id = UUID().uuidString
         self.ownerId = ownerId
         self.itemIds = []
     }
