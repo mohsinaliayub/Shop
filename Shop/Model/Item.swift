@@ -52,4 +52,31 @@ func saveItemToFirestore(_ item: Item) {
     firebaseReference(.items).document(item.id).setData(item.dictionary)
 }
 
-
+func downloadItemsFromFirestore(withCategoryId categoryId: String,
+                                completion: @escaping (_ items: [Item]?, _ error: Error?) -> Void) {
+    
+    var items = [Item]()
+    
+    firebaseReference(.items)
+        .whereField(Constants.categoryId, isEqualTo: categoryId)
+        .getDocuments { snapshot, error in
+            // error occured notify the caller
+            if let error = error {
+                print(error.localizedDescription)
+                completion(nil, error)
+                return
+            }
+            
+            // if we don't have a snapshot or if it is empty, return empty array
+            guard let snapshot = snapshot, !snapshot.isEmpty else {
+                completion(items, nil)
+                return
+            }
+            
+            // put all the items in the array and send a callback
+            for item in snapshot.documents {
+                items.append(Item(dictionary: item.data()))
+            }
+            completion(items, nil)
+    }
+}
