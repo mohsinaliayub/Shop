@@ -83,6 +83,7 @@
 		426AD0FC27F0B06700F420D4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0FB27F0B06700F420D4 /* Reachability.swift */; };
 		426AD0FE27F0B11300F420D4 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0FD27F0B11300F420D4 /* StorageService.swift */; };
 		42C80FA127F1985200779907 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA027F1985200779907 /* ItemTableViewCell.swift */; };
+		42C80FA327F19D6000779907 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA227F19D6000779907 /* HelperFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +159,7 @@
 		426AD0FB27F0B06700F420D4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		426AD0FD27F0B11300F420D4 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		42C80FA027F1985200779907 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		42C80FA227F19D6000779907 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 				426AD07627F0502A00F420D4 /* Constants.swift */,
 				426AD0FB27F0B06700F420D4 /* Reachability.swift */,
 				426AD0FD27F0B11300F420D4 /* StorageService.swift */,
+				42C80FA227F19D6000779907 /* HelperFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				426AD0ED27F0A48200F420D4 /* Permission.swift in Sources */,
 				426AD0C627F0A48200F420D4 /* ImagesController.swift in Sources */,
 				426AD0DD27F0A48200F420D4 /* Config.swift in Sources */,
+				42C80FA327F19D6000779907 /* HelperFunctions.swift in Sources */,
 				426AD0E727F0A48200F420D4 /* AlbumCell.swift in Sources */,
 				426AD0CB27F0A48200F420D4 /* ImageCell.swift in Sources */,
 				426AD0E227F0A48200F420D4 /* String+Extensions.swift in Sources */,

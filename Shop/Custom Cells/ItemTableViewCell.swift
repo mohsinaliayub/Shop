@@ -23,7 +23,8 @@ class ItemTableViewCell: UITableViewCell {
     func generateCell(with item: Item) {
         nameLabel.text = item.name
         descriptionLabel.text = item.description
-        priceLabel.text = String(item.price)
+        priceLabel.text = convertToCurrency(item.price)
+        priceLabel.adjustsFontSizeToFitWidth = true
         
         if !item.imageLinks.isEmpty {
             StorageService.shared.downloadImages(fromUrls: [item.imageLinks.first!]) { images in
