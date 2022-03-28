@@ -17,6 +17,7 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     // properties
+    private let imageCell = "imageCell"
     let hud = JGProgressHUD(style: .dark)
     
     var item: Item!
@@ -25,7 +26,16 @@ class ItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("Item name is: \(item.name)")
+        setupUI()
+    }
+    
+    // MARK: - Set Up UI
+    
+    private func setupUI() {
+        title = item.name
+        nameLabel.text = item.name
+        priceLabel.text = convertToCurrency(item.price)
+        descriptionTextView.text = item.description
     }
 
     // MARK: - Navigation
@@ -37,3 +47,19 @@ class ItemDetailViewController: UIViewController {
     }
 
 }
+
+extension ItemDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageCell, for: indexPath) as! ImageCollectionViewCell
+        
+        return cell
+    }
+    
+    
+}
+
