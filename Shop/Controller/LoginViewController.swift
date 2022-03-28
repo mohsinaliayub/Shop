@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import JGProgressHUD
+import NVActivityIndicatorView
 
 class LoginViewController: UIViewController {
     
@@ -13,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var resendEmailButton: UIButton!
+    
+    // properties
     
 
     

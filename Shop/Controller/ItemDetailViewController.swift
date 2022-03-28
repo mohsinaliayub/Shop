@@ -76,22 +76,23 @@ class ItemDetailViewController: UIViewController {
     @objc private func addToBasket() {
         
         // TODO: check if the user is logged in or show login view
+        showLoginViewController()
         
-        downloadBasketFromFirestore(for: "1234") { basket, error in
-            if let _ = error {
-                // handle the error and display to user
-            }
-            
-            // if we have no basket, create a basket
-            guard let basket = basket else {
-                self.createNewBasket()
-                return
-            }
-
-            // append items to our basket and update our basket
-            basket.itemIds.append(self.item.id)
-            self.updateBasket(basket, withValues: [Constants.itemIds : basket.itemIds])
-        }
+//        downloadBasketFromFirestore(for: "1234") { basket, error in
+//            if let _ = error {
+//                // handle the error and display to user
+//            }
+//
+//            // if we have no basket, create a basket
+//            guard let basket = basket else {
+//                self.createNewBasket()
+//                return
+//            }
+//
+//            // append items to our basket and update our basket
+//            basket.itemIds.append(self.item.id)
+//            self.updateBasket(basket, withValues: [Constants.itemIds : basket.itemIds])
+//        }
     }
     
     // MARK: - Add to basket
@@ -134,6 +135,12 @@ class ItemDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+    }
+    
+    private func showLoginViewController() {
+        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
+        
+        self.present(loginVC, animated: true)
     }
 
 }

@@ -599,7 +599,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq4-Gt-bv4">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq4-Gt-bv4">
                                 <rect key="frame" x="20" y="389" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
@@ -717,7 +717,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ob2-oE-BnM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="arW-6g-EvL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginVC" automaticallyAdjustsScrollViewInsets="NO" id="arW-6g-EvL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lzB-sg-w1M">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
