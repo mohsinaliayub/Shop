@@ -79,3 +79,34 @@ func downloadItemsFromFirestore(withCategoryId categoryId: String,
             completion(items, nil)
     }
 }
+
+func downloadItems(withIds ids: [String], completion: @escaping (_ items: [Item]) -> Void) {
+    if ids.isEmpty {
+        completion([])
+        return
+    }
+    
+    var count = 0
+    var items = [Item]()
+    
+    // download every item and append to the items array
+    ids.forEach { id in
+        firebaseReference(.items).document(id).getDocument { snapshot, error in
+            // TODO: Return error from this by creating an errors array with a description of why we couldn't get the item
+            // if snapshot does not exist, return with empty array - we were unable to download every single item
+            guard let snapshot = snapshot, snapshot.exists else {
+                completion(items)
+                return
+            }
+            
+            items.append(Item(dictionary: snapshot.data()!))
+            count += 1
+            
+            if count == ids.count {
+                completion(items)
+            }
+        }
+    }
+    
+    
+}
