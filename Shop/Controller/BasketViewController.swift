@@ -29,6 +29,10 @@ class BasketViewController: UIViewController {
             }
         }
     }
+    var totalBasketPrice: String {
+        let totalPrice = itemsInBasket.reduce(0.0) { $0 + $1.price }
+        return "Total price: " + convertToCurrency(totalPrice)
+    }
     var purchasedItemIds = [String]()
     
     // MARK: View Lifecycle
@@ -38,6 +42,7 @@ class BasketViewController: UIViewController {
 
         tableView.tableFooterView = footerView
         loadBasketFromFirestore()
+        updateTotalLabels(itemsInBasket.isEmpty)
     }
     
     // MARK: Actions
@@ -61,7 +66,14 @@ class BasketViewController: UIViewController {
     private func getItemsFromBasket(withIds ids: [String]) {
         downloadItems(withIds: ids) { items in
             self.itemsInBasket = items
+            self.updateTotalLabels(items.isEmpty)
         }
+    }
+    
+    // MARK: Helper methods
+    private func updateTotalLabels(_ isEmpty: Bool) {
+        totalItemsLabel.text = isEmpty ? "0" : "\(itemsInBasket.count)"
+        totalPriceLabel.text = totalBasketPrice
     }
     
 }
