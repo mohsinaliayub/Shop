@@ -32,8 +32,8 @@ class User {
         ]
     }
     
-    init(email: String, firstName: String, lastName: String) {
-        id = UUID().uuidString
+    init(id: String, email: String, firstName: String, lastName: String) {
+        self.id = id
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
@@ -106,6 +106,7 @@ class User {
                 if let error = error {
                     print("auth email verification: ", error.localizedDescription)
                 }
+                completion(error)
             }
             
         }

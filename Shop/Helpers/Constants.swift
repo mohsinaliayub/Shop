@@ -5,7 +5,7 @@
 //  Created by Mohsin Ali Ayub on 27.03.22.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
     // IDs, Keys and Links
@@ -40,4 +40,7 @@ struct Constants {
     static let onBoard = "onBoard"
     static let purchasedItemIds = "purchasedItemIds"
     static let currentUser = "currentUser"
+    
+    // Colors
+    static let appColor = UIColor(red: 0.9998469949, green: 0.4941213727, blue: 0.4734867811, alpha: 1)
 }
