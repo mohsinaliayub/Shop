@@ -36,6 +36,7 @@ struct Constants {
     static let email = "email"
     static let firstName = "firstName"
     static let lastName = "lastName"
+    static let fullName = "fullName"
     static let fullAddress = "fullAddress"
     static let onBoard = "onBoard"
     static let purchasedItemIds = "purchasedItemIds"

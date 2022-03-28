@@ -37,6 +37,7 @@ class User {
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
+        fullAddress = ""
         purchasedItemIds = []
         onBoard = false
     }
@@ -88,7 +89,7 @@ class User {
             }
             
             // email is verified, there is no error also
-            // TODO: Download user from firestore
+            downloadUserFromFirestore(withId: authDataResult.user.uid, email: email)
             completion(nil, true)
         }
     }
@@ -113,4 +114,39 @@ class User {
         
     }
     
+}
+
+// MARK: - Save & Retrieve User Info from Firebase Firestore
+
+func saveUserToFirestore(_ user: User) {
+    firebaseReference(.user).document(user.id).setData(user.dictionary) { error in
+        if let error = error {
+            print("Error saving user \(error.localizedDescription)")
+        }
+    }
+}
+
+func downloadUserFromFirestore(withId userId: String, email: String) {
+    firebaseReference(.user).document(userId).getDocument { snapshot, error in
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        
+        // there is no snapshot, create a new user
+        guard let snapshot = snapshot, snapshot.exists else {
+            let user = User(id: userId, email: email, firstName: "", lastName: "")
+            saveUserLocally(userDictionary: user.dictionary)
+            saveUserToFirestore(user)
+            return
+        }
+        
+        // a user data already exists, so save it to UserDefaults
+        print("download current user from firestore")
+        saveUserLocally(userDictionary: snapshot.data()!)
+    }
+}
+
+func saveUserLocally(userDictionary: [String: Any]) {
+    UserDefaults.standard.set(userDictionary, forKey: Constants.currentUser)
 }
