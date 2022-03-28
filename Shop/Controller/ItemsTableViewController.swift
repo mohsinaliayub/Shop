@@ -14,7 +14,11 @@ class ItemsTableViewController: UITableViewController {
     private let itemCell = "itemCell"
     
     var category: Category!
-    var items = [Item]()
+    var items = [Item]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     // MARK: - View Lifecycle
     
@@ -36,7 +40,19 @@ class ItemsTableViewController: UITableViewController {
     // MARK: - Load Items
     
     private func loadItems(from category: Category) {
-        
+        downloadItemsFromFirestore(withCategoryId: category.id) { items, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            // TODO: handle the case when there are no items in the array
+            guard let items = items else {
+                return
+            }
+
+            self.items = items
+        }
     }
 
     // MARK: - Table view data source
@@ -46,9 +62,9 @@ class ItemsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: itemCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: itemCell, for: indexPath) as! ItemTableViewCell
 
-        // Configure the cell...
+        cell.generateCell(with: items[indexPath.row])
 
         return cell
     }

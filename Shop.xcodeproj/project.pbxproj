@@ -82,6 +82,7 @@
 		426AD0FA27F0A48200F420D4 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0C527F0A48200F420D4 /* Video.swift */; };
 		426AD0FC27F0B06700F420D4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0FB27F0B06700F420D4 /* Reachability.swift */; };
 		426AD0FE27F0B11300F420D4 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD0FD27F0B11300F420D4 /* StorageService.swift */; };
+		42C80FA127F1985200779907 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA027F1985200779907 /* ItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +157,7 @@
 		426AD0C527F0A48200F420D4 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		426AD0FB27F0B06700F420D4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		426AD0FD27F0B11300F420D4 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		42C80FA027F1985200779907 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				426AD06D27F04AF600F420D4 /* CategoryCollectionViewCell.swift */,
+				42C80FA027F1985200779907 /* ItemTableViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				426AD0DF27F0A48200F420D4 /* UIImageView+Extensions.swift in Sources */,
 				426AD0D527F0A48200F420D4 /* DropdownController.swift in Sources */,
 				426AD0D727F0A48200F420D4 /* AdvancedVideoEditor.swift in Sources */,
+				42C80FA127F1985200779907 /* ItemTableViewCell.swift in Sources */,
 				426AD0EC27F0A48200F420D4 /* OrientationMan.swift in Sources */,
 				426AD0F427F0A48200F420D4 /* UIColor.swift in Sources */,
 				426AD07727F0502A00F420D4 /* Constants.swift in Sources */,

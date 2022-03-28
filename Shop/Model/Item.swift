@@ -41,7 +41,7 @@ class Item {
         name = dictionary[Constants.name] as! String
         description = dictionary[Constants.description] as! String
         price = dictionary[Constants.price] as! Double
-        imageLinks = dictionary[Constants.price] as! [String]
+        imageLinks = dictionary[Constants.imageLinks] as! [String]
     }
     
 }
@@ -62,7 +62,6 @@ func downloadItemsFromFirestore(withCategoryId categoryId: String,
         .getDocuments { snapshot, error in
             // error occured notify the caller
             if let error = error {
-                print(error.localizedDescription)
                 completion(nil, error)
                 return
             }

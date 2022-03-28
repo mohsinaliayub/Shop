@@ -102,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="itemCell" id="9Fk-Ck-s2K">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="itemCell" id="9Fk-Ck-s2K" customClass="ItemTableViewCell" customModule="Shop" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Fk-Ck-s2K" id="859-gx-udR">
@@ -150,6 +150,12 @@
                                         <constraint firstItem="Obj-o9-irx" firstAttribute="leading" secondItem="859-gx-udR" secondAttribute="leading" constant="20" symbolic="YES" id="sVb-F0-Aus"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="S6A-I7-H12" id="UFK-h5-4MG"/>
+                                    <outlet property="itemImageView" destination="Obj-o9-irx" id="48e-Cp-dGw"/>
+                                    <outlet property="nameLabel" destination="Dsn-rd-5FT" id="kPG-IV-c0v"/>
+                                    <outlet property="priceLabel" destination="7De-nX-Brn" id="bAL-a2-FAm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
