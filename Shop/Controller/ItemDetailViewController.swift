@@ -38,6 +38,14 @@ class ItemDetailViewController: UIViewController {
 
         setupUI()
         downloadPictures()
+        
+        self.navigationItem.leftBarButtonItems = [
+            UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backAction))
+        ]
+        
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(named: "addToBasket"), style: .plain, target: self, action: #selector(addToBasket))
+        ]
     }
     
     // MARK: - Set Up UI
@@ -59,6 +67,16 @@ class ItemDetailViewController: UIViewController {
         }
     }
 
+    // MARK: - Actions
+    
+    @objc private func backAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func addToBasket() {
+        
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
