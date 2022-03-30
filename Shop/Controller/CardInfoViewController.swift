@@ -8,6 +8,11 @@
 import UIKit
 import Stripe
 
+protocol CardInfoViewControllerDelegate: AnyObject {
+    func didFinishRetrievingToken(token: STPToken)
+    func didCancel()
+}
+
 class CardInfoViewController: UIViewController {
 
     // Outlets & Views
@@ -15,12 +20,15 @@ class CardInfoViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     let paymentCardTextField = STPPaymentCardTextField()
     
+    weak var delegate: CardInfoViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(paymentCardTextField)
         
         paymentCardTextField.translatesAutoresizingMaskIntoConstraints = false
+        paymentCardTextField.delegate = self
         
         view.addConstraint(NSLayoutConstraint(item: paymentCardTextField, attribute: .top, relatedBy: .equal,
                                               toItem: doneButton, attribute: .bottom, multiplier: 1, constant: 30))
@@ -31,10 +39,11 @@ class CardInfoViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
-        dismiss()
+        processCard()
     }
     
     @IBAction func cancelButtonPressed() {
+        delegate?.didCancel()
         dismiss()
     }
     
@@ -42,6 +51,33 @@ class CardInfoViewController: UIViewController {
     
     private func dismiss() {
         dismiss(animated: true)
+    }
+    
+    private func processCard() {
+        let cardParams = STPCardParams()
+        cardParams.number = paymentCardTextField.cardNumber
+        cardParams.expMonth = UInt(paymentCardTextField.expirationMonth)
+        cardParams.expYear = UInt(paymentCardTextField.expirationYear)
+        cardParams.cvc = paymentCardTextField.cvc
+        
+        STPAPIClient.shared.createToken(withCard: cardParams) { token, error in
+            if let error = error {
+                print("Error processing card token", error.localizedDescription)
+            }
+            
+            guard let token = token else { return }
+            
+            self.delegate?.didFinishRetrievingToken(token: token)
+            self.dismiss()
+        }
+    }
+    
+}
+
+extension CardInfoViewController: STPPaymentCardTextFieldDelegate {
+    
+    func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
+        doneButton.isEnabled = textField.isValid
     }
     
 }

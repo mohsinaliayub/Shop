@@ -8,6 +8,7 @@
 import UIKit
 import JGProgressHUD
 import Stripe
+import SwiftUI
 
 class BasketViewController: UIViewController {
     
@@ -114,6 +115,7 @@ class BasketViewController: UIViewController {
         let cardAction = UIAlertAction(title: "Pay with Card", style: .default) { action in
             // show card number view
             let cardInfoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "cardInfoViewController") as! CardInfoViewController
+            cardInfoVC.delegate = self
             
             self.present(cardInfoVC, animated: true)
         }
@@ -140,7 +142,7 @@ class BasketViewController: UIViewController {
         StripeClient.shared.createAndConfirmPayment(token: token, amount: totalPrice) { error in
             
             if let error = error {
-                print("error ", error.localizedDescription)
+                self.hud.showHUD(withText: error.localizedDescription, indicatorType: .failure, showIn: self.view)
             } else {
                 self.emptyBasket()
                 self.addItemsToPurchaseHistory(withIds: self.purchasedItemIds)
@@ -251,6 +253,18 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         showItemViewController(with: itemsInBasket[indexPath.row])
+    }
+    
+}
+
+extension BasketViewController: CardInfoViewControllerDelegate {
+    
+    func didCancel() {
+        hud.showHUD(withText: "Payment Cancelled", indicatorType: .failure, showIn: view)
+    }
+    
+    func didFinishRetrievingToken(token: STPToken) {
+        finishPayment(token: token)
     }
     
 }
