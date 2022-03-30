@@ -37,7 +37,7 @@ class EditProfileViewController: UIViewController {
     // Actions
     
     @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
-        
+        logOutUser()
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -81,6 +81,19 @@ class EditProfileViewController: UIViewController {
     
     private func dismissKeyboard() {
         view.endEditing(false)
+    }
+    
+    private func logOutUser() {
+        User.logOutCurrentUser { error in
+            if let error = error {
+                print(error.localizedDescription)
+                self.hud.showHUD(withText: error.localizedDescription, indicatorType: .failure, showIn: self.view)
+                return
+            }
+            
+            print("You've been logged out")
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
 }

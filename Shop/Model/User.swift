@@ -112,6 +112,18 @@ class User {
         }
     }
     
+    class func logOutCurrentUser(completion: @escaping (Error?) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            UserDefaults.standard.removeObject(forKey: Constants.currentUser)
+            UserDefaults.standard.synchronize()
+            
+            completion(nil)
+        } catch {
+            completion(error)
+        }
+    }
+    
     // MARK: - Resend link methods
     class func resetPassword(forEmail email: String, completion: @escaping (_ error: Error?) -> Void) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
