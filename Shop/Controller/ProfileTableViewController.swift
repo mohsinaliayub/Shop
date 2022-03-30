@@ -29,9 +29,9 @@ class ProfileTableViewController: UITableViewController {
         checkOnboardingStatus()
     }
     
-    // UITableViewDataSource
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+    // UITableViewDataSource & UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     // Actions
@@ -77,7 +77,7 @@ class ProfileTableViewController: UITableViewController {
     }
     
     private func goToEditProfile() {
-        print("Edit Profile")
+        performSegue(withIdentifier: "editProfile", sender: nil)
     }
     
 }

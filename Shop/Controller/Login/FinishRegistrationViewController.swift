@@ -45,14 +45,6 @@ class FinishRegistrationViewController: UIViewController {
     
     // Helper methods
     
-    private func showHUD(withText text: String, success: Bool, completion: (() -> Void)? = nil) {
-        hud.textLabel.text = text
-        hud.indicatorView = success ? JGProgressHUDSuccessIndicatorView() : JGProgressHUDErrorIndicatorView()
-        hud.show(in: view)
-        hud.dismiss(afterDelay: 2.0, animated: true, completion: completion)
-        
-    }
-    
     private func updateDoneButtonStatus() {
         guard let name = nameTextField.text, let surname = surnameTextField.text,
               let address = addressTextField.text else {
@@ -82,9 +74,9 @@ class FinishRegistrationViewController: UIViewController {
         updateCurrentUserInFirestore(withValues: valuesToUpdateInFirestore) { error in
             if let error = error {
                 print(error.localizedDescription)
-                self.showHUD(withText: error.localizedDescription, success: false)
+                self.hud.showHUD(withText: error.localizedDescription, indicatorType: .failure, showIn: self.view)
             } else {
-                self.showHUD(withText: "Updated!", success: true) {
+                self.hud.showHUD(withText: "Updated!", indicatorType: .success, showIn: self.view) {
                     self.dismiss(animated: true)
                 }
             }
