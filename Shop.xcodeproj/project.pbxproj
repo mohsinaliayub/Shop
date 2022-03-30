@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17A3DE1BAB7CD014B2816F71 /* Pods_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E23972D3E87B9372D9E7A4 /* Pods_Shop.framework */; };
 		421F360127F1B5E1000EC6DF /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421F360027F1B5E1000EC6DF /* Basket.swift */; };
 		421F360327F1C4F2000EC6DF /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421F360227F1C4F2000EC6DF /* BasketViewController.swift */; };
 		4253F6A227F4584800BA1529 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4253F6A127F4584800BA1529 /* FinishRegistrationViewController.swift */; };
@@ -88,6 +89,7 @@
 		4277D08527F1E6BF00A5C987 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277D08427F1E6BF00A5C987 /* LoginViewController.swift */; };
 		4277D08727F1EA0C00A5C987 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277D08627F1EA0C00A5C987 /* User.swift */; };
 		4277D08927F20C6300A5C987 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277D08827F20C6300A5C987 /* ProfileTableViewController.swift */; };
+		428C00E727F4D9F0005F8951 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 428C00E627F4D9F0005F8951 /* Alamofire */; };
 		42C80FA127F1985200779907 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA027F1985200779907 /* ItemTableViewCell.swift */; };
 		42C80FA327F19D6000779907 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA227F19D6000779907 /* HelperFunctions.swift */; };
 		42C80FA527F1A13800779907 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA427F1A13800779907 /* ItemDetailViewController.swift */; };
@@ -101,6 +103,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05F5823A6C3873A6287B63CB /* Pods-Shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shop.release.xcconfig"; path = "Target Support Files/Pods-Shop/Pods-Shop.release.xcconfig"; sourceTree = "<group>"; };
 		421F360027F1B5E1000EC6DF /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		421F360227F1C4F2000EC6DF /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		4253F6A127F4584800BA1529 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 		42F6783B27F4705B00CFCDFD /* PurchasedHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedHistoryTableViewController.swift; sourceTree = "<group>"; };
 		42F6783D27F4956800CFCDFD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		42F6783F27F4A1EC00CFCDFD /* AlgoliaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaService.swift; sourceTree = "<group>"; };
+		98E23972D3E87B9372D9E7A4 /* Pods_Shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF127CFD1B8176776CF9C380 /* Pods-Shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shop.debug.xcconfig"; path = "Target Support Files/Pods-Shop/Pods-Shop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				428C00E727F4D9F0005F8951 /* Alamofire in Frameworks */,
 				426AD06327F047A900F420D4 /* FirebaseAnalytics in Frameworks */,
 				426AD06927F047A900F420D4 /* FirebaseStorage in Frameworks */,
 				426AD08327F0A3D900F420D4 /* NVActivityIndicatorView in Frameworks */,
@@ -201,6 +207,7 @@
 				426AD06527F047A900F420D4 /* FirebaseAuth in Frameworks */,
 				426AD06727F047A900F420D4 /* FirebaseFirestore in Frameworks */,
 				426AD08027F0A32900F420D4 /* JGProgressHUD in Frameworks */,
+				17A3DE1BAB7CD014B2816F71 /* Pods_Shop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +228,8 @@
 			children = (
 				426AD04927F03E1E00F420D4 /* Shop */,
 				426AD04827F03E1E00F420D4 /* Products */,
+				F588BA60813DD47C94645F3D /* Pods */,
+				BCAFE09631F265A1C3D4A4F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -467,6 +476,23 @@
 			path = Videos;
 			sourceTree = "<group>";
 		};
+		BCAFE09631F265A1C3D4A4F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98E23972D3E87B9372D9E7A4 /* Pods_Shop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F588BA60813DD47C94645F3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF127CFD1B8176776CF9C380 /* Pods-Shop.debug.xcconfig */,
+				05F5823A6C3873A6287B63CB /* Pods-Shop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -474,9 +500,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 426AD05B27F03E1F00F420D4 /* Build configuration list for PBXNativeTarget "Shop" */;
 			buildPhases = (
+				76296755DAF9EEAF40BE4A9B /* [CP] Check Pods Manifest.lock */,
 				426AD04327F03E1E00F420D4 /* Sources */,
 				426AD04427F03E1E00F420D4 /* Frameworks */,
 				426AD04527F03E1E00F420D4 /* Resources */,
+				817BCB678C58C2B249346B38 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -491,6 +519,7 @@
 				426AD07F27F0A32900F420D4 /* JGProgressHUD */,
 				426AD08227F0A3D900F420D4 /* NVActivityIndicatorView */,
 				42F6784527F4B1BD00CFCDFD /* AlgoliaSearchClient */,
+				428C00E627F4D9F0005F8951 /* Alamofire */,
 			);
 			productName = Shop;
 			productReference = 426AD04727F03E1E00F420D4 /* Shop.app */;
@@ -525,6 +554,7 @@
 				426AD07E27F0A32900F420D4 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 				426AD08127F0A3D900F420D4 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				42F6784427F4B1BD00CFCDFD /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */,
+				428C00E527F4D9F0005F8951 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 426AD04827F03E1E00F420D4 /* Products */;
 			projectDirPath = "";
@@ -549,6 +579,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		76296755DAF9EEAF40BE4A9B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		817BCB678C58C2B249346B38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shop/Pods-Shop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shop/Pods-Shop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shop/Pods-Shop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		426AD04327F03E1E00F420D4 /* Sources */ = {
@@ -775,6 +847,7 @@
 		};
 		426AD05C27F03E1F00F420D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF127CFD1B8176776CF9C380 /* Pods-Shop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -805,6 +878,7 @@
 		};
 		426AD05D27F03E1F00F420D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05F5823A6C3873A6287B63CB /* Pods-Shop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -881,6 +955,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		428C00E527F4D9F0005F8951 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.5.0;
+			};
+		};
 		42F6784427F4B1BD00CFCDFD /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/algolia/algoliasearch-client-swift#:~:text=InstantSearch%20repo%27s%20URL";
@@ -921,6 +1003,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 426AD08127F0A3D900F420D4 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
+		};
+		428C00E627F4D9F0005F8951 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 428C00E527F4D9F0005F8951 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		42F6784527F4B1BD00CFCDFD /* AlgoliaSearchClient */ = {
 			isa = XCSwiftPackageProductDependency;
