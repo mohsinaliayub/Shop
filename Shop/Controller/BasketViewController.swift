@@ -113,6 +113,9 @@ class BasketViewController: UIViewController {
         
         let cardAction = UIAlertAction(title: "Pay with Card", style: .default) { action in
             // show card number view
+            let cardInfoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "cardInfoViewController") as! CardInfoViewController
+            
+            self.present(cardInfoVC, animated: true)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)

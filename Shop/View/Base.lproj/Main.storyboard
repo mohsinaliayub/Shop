@@ -1151,6 +1151,49 @@
             </objects>
             <point key="canvasLocation" x="6474" y="19"/>
         </scene>
+        <!--Card Info View Controller-->
+        <scene sceneID="95C-1Q-SR0">
+            <objects>
+                <viewController storyboardIdentifier="cardInfoViewController" id="uPV-Lc-wC4" customClass="CardInfoViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qD3-DN-UML">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JF5-5W-mmh">
+                                <rect key="frame" x="20" y="64" width="69" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed" destination="uPV-Lc-wC4" eventType="touchUpInside" id="QnH-qj-UeL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksT-tw-yXb">
+                                <rect key="frame" x="335" y="64" width="59" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed" destination="uPV-Lc-wC4" eventType="touchUpInside" id="rjs-D6-BMG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qka-6w-ijH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ksT-tw-yXb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JF5-5W-mmh" secondAttribute="trailing" constant="8" symbolic="YES" id="O7w-si-hmb"/>
+                            <constraint firstItem="ksT-tw-yXb" firstAttribute="top" secondItem="Qka-6w-ijH" secondAttribute="top" constant="20" id="f9C-ho-Cih"/>
+                            <constraint firstItem="Qka-6w-ijH" firstAttribute="trailing" secondItem="ksT-tw-yXb" secondAttribute="trailing" constant="20" id="kf0-13-Zon"/>
+                            <constraint firstItem="JF5-5W-mmh" firstAttribute="top" secondItem="Qka-6w-ijH" secondAttribute="top" constant="20" id="n7v-AM-LnJ"/>
+                            <constraint firstItem="JF5-5W-mmh" firstAttribute="leading" secondItem="Qka-6w-ijH" secondAttribute="leading" constant="20" id="zxe-TR-6HL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="ksT-tw-yXb" id="TEH-7j-O9m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edp-4f-oHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6474" y="886"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="suD-JF-WC5">
             <objects>
