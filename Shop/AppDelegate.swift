@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Stripe
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        initializeStripe()
         
         return true
     }
@@ -33,5 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    // MARK: Stripe
+    
+    func initializeStripe() {
+        STPAPIClient.shared.publishableKey = Constants.Stripe.publishableKey
+        StripeClient.shared.baseURLString = Constants.Stripe.baseURLString
+    }
+    
 }
 

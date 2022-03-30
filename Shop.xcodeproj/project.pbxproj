@@ -90,6 +90,7 @@
 		4277D08727F1EA0C00A5C987 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277D08627F1EA0C00A5C987 /* User.swift */; };
 		4277D08927F20C6300A5C987 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277D08827F20C6300A5C987 /* ProfileTableViewController.swift */; };
 		428C00E727F4D9F0005F8951 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 428C00E627F4D9F0005F8951 /* Alamofire */; };
+		428C00E927F4DEFB005F8951 /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428C00E827F4DEFB005F8951 /* StripeClient.swift */; };
 		42C80FA127F1985200779907 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA027F1985200779907 /* ItemTableViewCell.swift */; };
 		42C80FA327F19D6000779907 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA227F19D6000779907 /* HelperFunctions.swift */; };
 		42C80FA527F1A13800779907 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA427F1A13800779907 /* ItemDetailViewController.swift */; };
@@ -181,6 +182,7 @@
 		4277D08427F1E6BF00A5C987 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4277D08627F1EA0C00A5C987 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4277D08827F20C6300A5C987 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		428C00E827F4DEFB005F8951 /* StripeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
 		42C80FA027F1985200779907 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		42C80FA227F19D6000779907 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		42C80FA427F1A13800779907 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				421F360027F1B5E1000EC6DF /* Basket.swift */,
 				4277D08627F1EA0C00A5C987 /* User.swift */,
 				42F6783F27F4A1EC00CFCDFD /* AlgoliaService.swift */,
+				428C00E827F4DEFB005F8951 /* StripeClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				426AD06E27F04AF600F420D4 /* CategoryCollectionViewCell.swift in Sources */,
 				426AD0D127F0A48200F420D4 /* StackView.swift in Sources */,
 				4277D08927F20C6300A5C987 /* ProfileTableViewController.swift in Sources */,
+				428C00E927F4DEFB005F8951 /* StripeClient.swift in Sources */,
 				426AD0F927F0A48200F420D4 /* VideoBox.swift in Sources */,
 				426AD0D427F0A48200F420D4 /* Once.swift in Sources */,
 				426AD0EA27F0A48200F420D4 /* Fetcher.swift in Sources */,

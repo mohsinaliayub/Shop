@@ -50,4 +50,11 @@ struct Constants {
         public static let publicKey = "YOUR ALGOLIA SEARCH-ONLY API KEY"
         public static let adminKey = "YOUR ALGOLIA ADMIN API KEY"
     }
+    
+    struct Stripe {
+        static let publishableKey = "pk_test_51Kj5CYAzfV4m8rZRKSRxwg6DeMV4fYY6ciU6KoQTO428eU68d06cUrAVbPqVvg9RSWxb8aQo6ppOit7YVHL7om9w00Kh1g0xZF"
+        static let baseURLString = "http://localhost:3000/"
+        static let defaultCurrency = "eur"
+        static let defaultDescription = "Purchase from Shop"
+    }
 }

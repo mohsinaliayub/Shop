@@ -7,6 +7,7 @@
 
 import UIKit
 import JGProgressHUD
+import Stripe
 
 class BasketViewController: UIViewController {
     
@@ -34,6 +35,7 @@ class BasketViewController: UIViewController {
         let totalPrice = itemsInBasket.reduce(0.0) { $0 + $1.price }
         return "Total price: " + convertToCurrency(totalPrice)
     }
+    var totalPrice = 0
     var purchasedItemIds = [String]()
     
     // MARK: View Lifecycle
@@ -65,9 +67,8 @@ class BasketViewController: UIViewController {
             return
         }
         
-        // TODO: purchase items first, then update the purchase history
-        testAddItemsToPurchasedHistory()
-        addItemsToPurchaseHistory(withIds: purchasedItemIds)
+        // provide user with payment options
+        showPaymentOptions()
     }
     
     // MARK: Download Basket
@@ -102,6 +103,47 @@ class BasketViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    // MARK: - Payment
+    
+    private func showPaymentOptions() {
+        let alertController = UIAlertController(title: "Payment Options", message: "Choose preferred payment option", preferredStyle: .actionSheet)
+        
+        let cardAction = UIAlertAction(title: "Pay with Card", style: .default) { action in
+            // show card number view
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertController.addAction(cardAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true)
+    }
+    
+    private func finishPayment(token: STPToken) {
+        totalPrice = 0
+        
+        for item in itemsInBasket {
+            purchasedItemIds.append(item.id)
+            totalPrice += Int(floor(item.price))
+        }
+        
+        // prepare total price for Stripe
+        totalPrice *= 100
+        
+        StripeClient.shared.createAndConfirmPayment(token: token, amount: totalPrice) { error in
+            
+            if let error = error {
+                print("error ", error.localizedDescription)
+            } else {
+                self.emptyBasket()
+                self.addItemsToPurchaseHistory(withIds: self.purchasedItemIds)
+                self.hud.showHUD(withText: "Payment Successful", indicatorType: .success, showIn: self.view)
+            }
+            
         }
     }
     
@@ -155,9 +197,6 @@ class BasketViewController: UIViewController {
                 print("Error updating purchased items: \(error.localizedDescription)")
                 self.hud.showHUD(withText: "Error updating purchased items", indicatorType: .failure,
                                  showIn: self.view)
-            } else {
-                // purchase successful, empty the basket
-                self.emptyBasket()
             }
         }
     }
