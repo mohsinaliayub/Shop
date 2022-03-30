@@ -144,12 +144,14 @@ class AddItemViewController: UIViewController {
                 // save links to item object, save the item to Firestore and pop the view
                 item.imageLinks = imageLinks
                 saveItemToFirestore(item)
+                AlgoliaService.shared.saveItemToAlgolia(item)
                 self.hideLoadingIndicator()
                 self.popTheView()
             }
             
         } else {
             saveItemToFirestore(item)
+            AlgoliaService.shared.saveItemToAlgolia(item)
             hideLoadingIndicator()
             popTheView()
         }

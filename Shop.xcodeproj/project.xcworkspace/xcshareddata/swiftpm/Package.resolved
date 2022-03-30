@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "algoliasearch-client-swift#:~:text=instantsearch%20repo%27s%20url",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/algolia/algoliasearch-client-swift#:~:text=InstantSearch%20repo%27s%20URL",
+      "state" : {
+        "revision" : "b0082c5afc902e32157726e4926b063eb4052e6c",
+        "version" : "8.14.0"
+      }
+    },
+    {
       "identity" : "boringssl-swiftpm",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/boringssl-SwiftPM.git",
@@ -115,6 +124,15 @@
       "state" : {
         "revision" : "611337c330350c9c1823ad6d671e7f936af5ee13",
         "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+        "version" : "1.4.2"
       }
     },
     {

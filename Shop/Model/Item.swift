@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Item {
+class Item: Codable {
     let id: String
     let categoryId: String
     var name: String
@@ -107,6 +107,8 @@ func downloadItems(withIds ids: [String], completion: @escaping (_ items: [Item]
             }
         }
     }
-    
-    
 }
+
+// MARK: - Algolia Functions
+
+
