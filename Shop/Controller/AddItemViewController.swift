@@ -56,10 +56,7 @@ class AddItemViewController: UIViewController {
         dismissKeyboard()
         
         guard fieldsAreCompleted() else {
-            hud.textLabel.text = "All fields are required!"
-            hud.indicatorView = JGProgressHUDErrorIndicatorView()
-            hud.show(in: view)
-            hud.dismiss(afterDelay: 2.0)
+            hud.showHUD(withText: "All fields are required!", indicatorType: .failure, showIn: view)
             
             return
         }

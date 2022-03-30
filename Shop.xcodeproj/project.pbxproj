@@ -94,6 +94,7 @@
 		42C80FA727F1A44800779907 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA627F1A44800779907 /* ImageCollectionViewCell.swift */; };
 		42F6783827F465B200CFCDFD /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6783727F465B200CFCDFD /* EditProfileViewController.swift */; };
 		42F6783A27F466D200CFCDFD /* JGProgressHUDExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6783927F466D200CFCDFD /* JGProgressHUDExtension.swift */; };
+		42F6783C27F4705B00CFCDFD /* PurchasedHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6783B27F4705B00CFCDFD /* PurchasedHistoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +181,7 @@
 		42C80FA627F1A44800779907 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		42F6783727F465B200CFCDFD /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		42F6783927F466D200CFCDFD /* JGProgressHUDExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGProgressHUDExtension.swift; sourceTree = "<group>"; };
+		42F6783B27F4705B00CFCDFD /* PurchasedHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedHistoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 				421F360227F1C4F2000EC6DF /* BasketViewController.swift */,
 				4277D08827F20C6300A5C987 /* ProfileTableViewController.swift */,
 				42F6783727F465B200CFCDFD /* EditProfileViewController.swift */,
+				42F6783B27F4705B00CFCDFD /* PurchasedHistoryTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				426AD0C927F0A48200F420D4 /* ImagesLibrary.swift in Sources */,
 				426AD0CD27F0A48200F420D4 /* TripleButton.swift in Sources */,
 				426AD06B27F04A5E00F420D4 /* CategoryCollectionViewController.swift in Sources */,
+				42F6783C27F4705B00CFCDFD /* PurchasedHistoryTableViewController.swift in Sources */,
 				426AD0E827F0A48200F420D4 /* ArrowButton.swift in Sources */,
 				426AD0E527F0A48200F420D4 /* EmptyView.swift in Sources */,
 				426AD0D627F0A48200F420D4 /* Constraints.swift in Sources */,

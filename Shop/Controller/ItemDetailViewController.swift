@@ -74,36 +74,36 @@ class ItemDetailViewController: UIViewController {
     }
     
     @objc private func addToBasket() {
+        // if no user is logged in, show login view
+        guard let currentUser = User.currentUser() else {
+            showLoginViewController()
+            return
+        }
         
-        // TODO: check if the user is logged in or show login view
-        showLoginViewController()
+        // user is logged in, download his/her basket
+        downloadBasketFromFirestore(for: currentUser.id) { basket, error in
+            // if there's no basket, create new basket
+            guard let basket = basket else {
+                self.createNewBasket()
+                return
+            }
+
+            // basket already exists, append an item and update in the firestore
+            self.updateBasket(basket, withValues: [Constants.itemIds : basket.itemIds])
+        }
         
-//        downloadBasketFromFirestore(for: "1234") { basket, error in
-//            if let _ = error {
-//                // handle the error and display to user
-//            }
-//
-//            // if we have no basket, create a basket
-//            guard let basket = basket else {
-//                self.createNewBasket()
-//                return
-//            }
-//
-//            // append items to our basket and update our basket
-//            basket.itemIds.append(self.item.id)
-//            self.updateBasket(basket, withValues: [Constants.itemIds : basket.itemIds])
-//        }
     }
     
     // MARK: - Add to basket
     
     private func createNewBasket() {
-        let newBasket = Basket(ownerId: "1234")
+        guard let currentUserId = User.currentUserId() else { return }
+        
+        let newBasket = Basket(ownerId: currentUserId)
         newBasket.itemIds = [ item.id ]
         
         saveBasketToFirestore(newBasket)
-        
-        showHUD(withText: "Added to basket")
+        self.hud.showHUD(withText: "Added to basket!", indicatorType: .success, showIn: view)
     }
     
     private func updateBasket(_ basket: Basket, withValues values: [String: Any]) {
@@ -111,22 +111,14 @@ class ItemDetailViewController: UIViewController {
             // Error happened, handle it
             if let error = error {
                 // TODO: show a more useful error
-                self.showHUD(withText: "Error: \(error.localizedDescription)",
-                             andIndicator: JGProgressHUDErrorIndicatorView())
+                self.hud.showHUD(withText: "Error: \(error.localizedDescription)",
+                                 indicatorType: .failure, showIn: self.view)
                 return
             }
             
             // show success information to the user
-            self.showHUD(withText: "Added to basket")
+            self.hud.showHUD(withText: "Added to basket", indicatorType: .success, showIn: self.view)
         }
-    }
-    
-    // MARK: - Helper methods
-    private func showHUD(withText text: String, andIndicator indicatorView: JGProgressHUDIndicatorView = JGProgressHUDSuccessIndicatorView()) {
-        self.hud.textLabel.text = text
-        self.hud.indicatorView = indicatorView
-        self.hud.show(in: view)
-        self.hud.dismiss(afterDelay: 2.0)
     }
     
     // MARK: - Navigation
