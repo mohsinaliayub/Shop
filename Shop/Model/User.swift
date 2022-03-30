@@ -134,12 +134,32 @@ class User {
 
 
 
-// MARK: - Save & Retrieve User Info from Firebase Firestore
+// MARK: - Save, Update & Retrieve User Info from Firebase Firestore
 
 func saveUserToFirestore(_ user: User) {
     firebaseReference(.user).document(user.id).setData(user.dictionary) { error in
         if let error = error {
             print("Error saving user \(error.localizedDescription)")
+        }
+    }
+}
+
+func updateCurrentUserInFirestore(withValues values: [String: Any], completion: @escaping (Error?) -> Void) {
+    guard var dictionary = UserDefaults.standard.object(forKey: Constants.currentUser) as? [String: Any],
+          let currentUserId = User.currentUserId()
+    else {
+        return
+    }
+    
+    // update the value for keys in saved dictionary
+    values.forEach { dictionary[$0] = $1 }
+    
+    // update user in firestore, and then if there's no error, save it locally as well
+    firebaseReference(.user).document(currentUserId).updateData(values) { error in
+        completion(error)
+        
+        if error == nil {
+            saveUserLocally(userDictionary: dictionary)
         }
     }
 }

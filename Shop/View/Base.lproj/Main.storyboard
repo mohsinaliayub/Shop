@@ -737,6 +737,9 @@
                                                     <rect key="frame" x="20" y="6.5" width="345.5" height="31"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Finish registration"/>
+                                                    <connections>
+                                                        <segue destination="aho-xx-RYz" kind="showDetail" id="wYz-OA-05c"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -810,6 +813,89 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zw-d4-rVh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2721.739130434783" y="1966.7410714285713"/>
+        </scene>
+        <!--Finish Registration View Controller-->
+        <scene sceneID="GXf-Hj-P6n">
+            <objects>
+                <viewController id="aho-xx-RYz" customClass="FinishRegistrationViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LqS-co-7Sd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onboarding" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjx-Pf-uMA">
+                                <rect key="frame" x="143.5" y="54" width="127.5" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83B-QD-71o">
+                                <rect key="frame" x="16" y="53.5" width="69" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="aho-xx-RYz" eventType="touchUpInside" id="Uyy-6a-MRf"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bC2-wC-1VK">
+                                <rect key="frame" x="20" y="104.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGO-mE-oeE">
+                                <rect key="frame" x="20" y="146.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qv2-q0-S0v">
+                                <rect key="frame" x="20" y="188.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTa-db-5Dl">
+                                <rect key="frame" x="20" y="242.5" width="374" height="34.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="aho-xx-RYz" eventType="touchUpInside" id="dtL-Q5-Yc0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2qf-vq-M8a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JGO-mE-oeE" firstAttribute="top" secondItem="bC2-wC-1VK" secondAttribute="bottom" constant="8" symbolic="YES" id="3FP-Ju-YV5"/>
+                            <constraint firstItem="Sjx-Pf-uMA" firstAttribute="top" secondItem="2qf-vq-M8a" secondAttribute="top" constant="10" id="4gU-wS-cUq"/>
+                            <constraint firstItem="RTa-db-5Dl" firstAttribute="leading" secondItem="2qf-vq-M8a" secondAttribute="leading" constant="20" id="7yJ-wI-pSv"/>
+                            <constraint firstItem="Qv2-q0-S0v" firstAttribute="top" secondItem="JGO-mE-oeE" secondAttribute="bottom" constant="8" symbolic="YES" id="EC0-uf-8d4"/>
+                            <constraint firstItem="Qv2-q0-S0v" firstAttribute="leading" secondItem="2qf-vq-M8a" secondAttribute="leading" constant="20" id="ELv-iG-bSg"/>
+                            <constraint firstItem="RTa-db-5Dl" firstAttribute="top" secondItem="Qv2-q0-S0v" secondAttribute="bottom" constant="20" id="JH4-6S-lOb"/>
+                            <constraint firstItem="bC2-wC-1VK" firstAttribute="leading" secondItem="2qf-vq-M8a" secondAttribute="leading" constant="20" id="KOx-iI-dJp"/>
+                            <constraint firstItem="Sjx-Pf-uMA" firstAttribute="centerX" secondItem="LqS-co-7Sd" secondAttribute="centerX" id="SwR-Ss-z4A"/>
+                            <constraint firstItem="JGO-mE-oeE" firstAttribute="leading" secondItem="2qf-vq-M8a" secondAttribute="leading" constant="20" id="Wx9-DE-wS0"/>
+                            <constraint firstItem="83B-QD-71o" firstAttribute="centerY" secondItem="Sjx-Pf-uMA" secondAttribute="centerY" id="aCj-BE-bmR"/>
+                            <constraint firstItem="2qf-vq-M8a" firstAttribute="trailing" secondItem="JGO-mE-oeE" secondAttribute="trailing" constant="20" id="c4M-Qd-aGk"/>
+                            <constraint firstItem="2qf-vq-M8a" firstAttribute="trailing" secondItem="Qv2-q0-S0v" secondAttribute="trailing" constant="20" id="d2L-9W-FbT"/>
+                            <constraint firstItem="83B-QD-71o" firstAttribute="leading" secondItem="2qf-vq-M8a" secondAttribute="leading" constant="16" id="klG-tt-IKm"/>
+                            <constraint firstItem="2qf-vq-M8a" firstAttribute="trailing" secondItem="RTa-db-5Dl" secondAttribute="trailing" constant="20" id="me6-u7-geV"/>
+                            <constraint firstItem="bC2-wC-1VK" firstAttribute="top" secondItem="83B-QD-71o" secondAttribute="bottom" constant="20" id="oot-jy-XIV"/>
+                            <constraint firstItem="2qf-vq-M8a" firstAttribute="trailing" secondItem="bC2-wC-1VK" secondAttribute="trailing" constant="20" id="t7d-VG-l4P"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="X1Z-xx-f15"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="Qv2-q0-S0v" id="LRs-pl-ryB"/>
+                        <outlet property="doneButton" destination="RTa-db-5Dl" id="l8s-qA-fZB"/>
+                        <outlet property="nameTextField" destination="bC2-wC-1VK" id="Nbt-v3-PE8"/>
+                        <outlet property="surnameTextField" destination="JGO-mE-oeE" id="vql-mf-FD9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yr-dh-A4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3740.579710144928" y="2201.7857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ob2-oE-BnM">

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		421F360127F1B5E1000EC6DF /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421F360027F1B5E1000EC6DF /* Basket.swift */; };
 		421F360327F1C4F2000EC6DF /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421F360227F1C4F2000EC6DF /* BasketViewController.swift */; };
+		4253F6A227F4584800BA1529 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4253F6A127F4584800BA1529 /* FinishRegistrationViewController.swift */; };
 		426AD04B27F03E1E00F420D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD04A27F03E1E00F420D4 /* AppDelegate.swift */; };
 		426AD04D27F03E1E00F420D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AD04C27F03E1E00F420D4 /* SceneDelegate.swift */; };
 		426AD05227F03E1E00F420D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426AD05027F03E1E00F420D4 /* Main.storyboard */; };
@@ -96,6 +97,7 @@
 /* Begin PBXFileReference section */
 		421F360027F1B5E1000EC6DF /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		421F360227F1C4F2000EC6DF /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		4253F6A127F4584800BA1529 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
 		426AD04727F03E1E00F420D4 /* Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426AD04A27F03E1E00F420D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		426AD04C27F03E1E00F420D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4253F6A327F4586B00BA1529 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4277D08427F1E6BF00A5C987 /* LoginViewController.swift */,
+				4253F6A127F4584800BA1529 /* FinishRegistrationViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		426AD03E27F03E1E00F420D4 = {
 			isa = PBXGroup;
 			children = (
@@ -249,12 +260,12 @@
 		426AD06027F03E3900F420D4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4253F6A327F4586B00BA1529 /* Login */,
 				426AD06A27F04A5E00F420D4 /* CategoryCollectionViewController.swift */,
 				426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */,
 				426AD07C27F09C0400F420D4 /* AddItemViewController.swift */,
 				42C80FA427F1A13800779907 /* ItemDetailViewController.swift */,
 				421F360227F1C4F2000EC6DF /* BasketViewController.swift */,
-				4277D08427F1E6BF00A5C987 /* LoginViewController.swift */,
 				4277D08827F20C6300A5C987 /* ProfileTableViewController.swift */,
 			);
 			path = Controller;
@@ -569,6 +580,7 @@
 				426AD0EE27F0A48200F420D4 /* PermissionView.swift in Sources */,
 				426AD0D927F0A48200F420D4 /* VideoEditor.swift in Sources */,
 				426AD0F627F0A48200F420D4 /* VideosController.swift in Sources */,
+				4253F6A227F4584800BA1529 /* FinishRegistrationViewController.swift in Sources */,
 				426AD0C927F0A48200F420D4 /* ImagesLibrary.swift in Sources */,
 				426AD0CD27F0A48200F420D4 /* TripleButton.swift in Sources */,
 				426AD06B27F04A5E00F420D4 /* CategoryCollectionViewController.swift in Sources */,
