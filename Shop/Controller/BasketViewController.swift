@@ -58,7 +58,16 @@ class BasketViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func checkoutItems(_ sender: UIButton) {
+        // if user has verified their email address and provided their name & address information
+        // let them checkout the basket - otherwise show an error stating they need to onboard
+        guard let currentUser = User.currentUser(), currentUser.onBoard else {
+            hud.showHUD(withText: "Please complete your profile", indicatorType: .failure, showIn: view)
+            return
+        }
         
+        // TODO: purchase items first, then update the purchase history
+        testAddItemsToPurchasedHistory()
+        addItemsToPurchaseHistory(withIds: purchasedItemIds)
     }
     
     // MARK: Download Basket
@@ -113,6 +122,44 @@ class BasketViewController: UIViewController {
     private func refreshUI() {
         tableView.reloadData()
         updateTotalLabels(itemsInBasket.isEmpty)
+    }
+    
+    // TODO: Delete this function after adding payment functionality
+    private func testAddItemsToPurchasedHistory() {
+        itemsInBasket.forEach { purchasedItemIds.append($0.id) }
+    }
+    
+    private func emptyBasket() {
+        purchasedItemIds.removeAll()
+        itemsInBasket.removeAll()
+        refreshUI()
+        
+        basket?.itemIds = []
+        
+        updateBasketInFirestore(basket!, withValues: [Constants.itemIds: basket!.itemIds]) { error in
+            if let error = error {
+                print(error.localizedDescription)
+                
+                return
+            }
+        }
+    }
+    
+    private func addItemsToPurchaseHistory(withIds itemIds: [String]) {
+        guard let currentUser = User.currentUser() else { return }
+        
+        currentUser.purchasedItemIds += purchasedItemIds
+        
+        updateCurrentUserInFirestore(withValues: [Constants.purchasedItemIds: currentUser.purchasedItemIds]) { error in
+            if let error = error {
+                print("Error updating purchased items: \(error.localizedDescription)")
+                self.hud.showHUD(withText: "Error updating purchased items", indicatorType: .failure,
+                                 showIn: self.view)
+            } else {
+                // purchase successful, empty the basket
+                self.emptyBasket()
+            }
+        }
     }
     
     // MARK: Navigation

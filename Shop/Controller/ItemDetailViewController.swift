@@ -89,6 +89,7 @@ class ItemDetailViewController: UIViewController {
             }
 
             // basket already exists, append an item and update in the firestore
+            basket.itemIds.append(self.item.id)
             self.updateBasket(basket, withValues: [Constants.itemIds : basket.itemIds])
         }
         

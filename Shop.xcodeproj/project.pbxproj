@@ -267,13 +267,13 @@
 			isa = PBXGroup;
 			children = (
 				4253F6A327F4586B00BA1529 /* Login */,
-				426AD06A27F04A5E00F420D4 /* CategoryCollectionViewController.swift */,
-				426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */,
 				426AD07C27F09C0400F420D4 /* AddItemViewController.swift */,
-				42C80FA427F1A13800779907 /* ItemDetailViewController.swift */,
 				421F360227F1C4F2000EC6DF /* BasketViewController.swift */,
-				4277D08827F20C6300A5C987 /* ProfileTableViewController.swift */,
+				426AD06A27F04A5E00F420D4 /* CategoryCollectionViewController.swift */,
 				42F6783727F465B200CFCDFD /* EditProfileViewController.swift */,
+				42C80FA427F1A13800779907 /* ItemDetailViewController.swift */,
+				426AD07827F06FE700F420D4 /* ItemsTableViewController.swift */,
+				4277D08827F20C6300A5C987 /* ProfileTableViewController.swift */,
 				42F6783B27F4705B00CFCDFD /* PurchasedHistoryTableViewController.swift */,
 			);
 			path = Controller;
