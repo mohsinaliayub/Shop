@@ -7,10 +7,12 @@
 
 import UIKit
 
+typealias ItemOrder = Basket.ItemOrder
+
 protocol BasketItemCellDelegate: AnyObject {
     
-    func updateTotalItemPrice(_ cell: BasketItemCell, for item: Item, itemCount: Int)
-    func removeItemFromBasket(_ cell: BasketItemCell, item: Item)
+    func updateTotalItemPrice(_ cell: BasketItemCell, for item: ItemOrder, itemCount: Int)
+    func removeItemOrderFromBasket(_ cell: BasketItemCell, itemOrder: ItemOrder)
     
 }
 
@@ -31,13 +33,12 @@ class BasketItemCell: UITableViewCell {
     var itemCount = 1 {
         didSet {
             itemOrderCountLabel.text = "\(itemCount)"
-            itemPriceLabel.text = (item.price * Double(itemCount)).currencyValue
+            itemPriceLabel.text = (order.item.price * Double(itemCount)).currencyValue
             updateButtonsDisableStatus()
-            item.itemOrderCount = itemCount
-            delegate?.updateTotalItemPrice(self, for: item, itemCount: itemCount)
+            order.itemCount = itemCount
         }
     }
-    private var item: Item!
+    private var order: ItemOrder!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,31 +50,33 @@ class BasketItemCell: UITableViewCell {
     @IBAction func decreaseItemOrder(_ sender: UIButton) {
         if itemCount > minItemOrderCount {
             itemCount -= 1
+            delegate?.updateTotalItemPrice(self, for: order, itemCount: itemCount)
         }
     }
     
     @IBAction func increaseItemOrderCount(_ sender: UIButton) {
         if itemCount < maxItemOrderCount {
             itemCount += 1
+            delegate?.updateTotalItemPrice(self, for: order, itemCount: itemCount)
         }
     }
     
     @IBAction func removeItemFromBasket(_ sender: UIButton) {
-        delegate?.removeItemFromBasket(self, item: item)
+        delegate?.removeItemOrderFromBasket(self, itemOrder: order)
     }
     
     // MARK: - Helper methods
     
-    func generateCell(withItem item: Item) {
-        self.item = item
+    func generateCell(withItemOrder order: Basket.ItemOrder) {
+        self.order = order
         
-        itemTitleLabel.text = item.name
-        itemDescriptionLabel.text = item.description
-        itemCount = item.itemCountInBasket
+        itemTitleLabel.text = order.item.name
+        itemDescriptionLabel.text = order.item.description
+        itemCount = order.itemCount
         
         // if there's an item image, download and display it
-        if !item.imageLinks.isEmpty {
-            StorageService.shared.downloadImages(fromUrls: [item.imageLinks[0]]) { images in
+        if !order.item.imageLinks.isEmpty {
+            StorageService.shared.downloadImages(fromUrls: [order.item.imageLinks[0]]) { images in
                 if images.isEmpty {
                     print("we didn't receive any image")
                     return

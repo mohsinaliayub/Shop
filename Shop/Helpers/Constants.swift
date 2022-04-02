@@ -32,6 +32,7 @@ struct Constants {
     // Basket
     static let ownerId = "ownerId"
     static let itemIds = "itemIds"
+    static let itemOrders = "itemOrders"
     
     // User
     static let email = "email"

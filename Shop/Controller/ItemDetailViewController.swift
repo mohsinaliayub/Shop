@@ -46,6 +46,12 @@ class ItemDetailViewController: UIViewController {
         self.navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(named: "addToBasket"), style: .plain, target: self, action: #selector(addToBasket))
         ]
+        
+        let itemOrder = Basket.ItemOrder(itemId: "CFFO", itemCount: 2)
+        print(itemOrder)
+        
+        let item = Item(categoryId: "CC", name: "DD", description: "EE", price: 4.99)
+        print(item.dictionary)
     }
     
     // MARK: - Set Up UI
@@ -89,8 +95,10 @@ class ItemDetailViewController: UIViewController {
             }
 
             // basket already exists, append an item and update in the firestore
-            basket.itemIds.append(self.item.id)
-            self.updateBasket(basket, withValues: [Constants.itemIds : basket.itemIds])
+            basket.addItemOrder(withId: self.item.id, count: 1)
+            // TODO: If item with same ID already exists in the Basket, just update its count
+            
+            self.updateBasket(basket, withValues: [Constants.itemIds : basket.itemOrdersDict])
         }
         
     }
@@ -101,7 +109,7 @@ class ItemDetailViewController: UIViewController {
         guard let currentUserId = User.currentUserId() else { return }
         
         let newBasket = Basket(ownerId: currentUserId)
-        newBasket.itemIds = [ item.id ]
+        newBasket.addItemOrder(withId: self.item.id, count: 1)
         
         saveBasketToFirestore(newBasket)
         self.hud.showHUD(withText: "Added to basket!", indicatorType: .success, showIn: view)

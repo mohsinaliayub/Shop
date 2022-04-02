@@ -28,18 +28,19 @@ class BasketViewController: UIViewController {
     private let itemDetailVCStoryboardId = "itemDetailViewController"
     
     var basket: Basket?
-    var itemsInBasket = [Item]() {
+    var itemOrdersInBasket = [Basket.ItemOrder]() {
         didSet {
             DispatchQueue.main.async {
                 self.refreshUI()
             }
         }
     }
+    var purchasedOrders = [Basket.ItemOrder]()
     
-    var shippingPrice: Double { itemsInBasket.isEmpty ? 0 : 4.99 }
+    var shippingPrice: Double { itemOrdersInBasket.isEmpty ? 0 : 4.99 }
     var totalBasketPrice: Double { subtotalBasketPrice + shippingPrice }
     var subtotalBasketPrice: Double {
-        let subtotal = itemsInBasket.reduce(0.0) { $0 + ($1.price * Double($1.itemCountInBasket)) }
+        let subtotal = itemOrdersInBasket.reduce(0.0) { $0 + $1.item.price * Double($1.itemCount) }
         return subtotal
     }
     
@@ -55,7 +56,7 @@ class BasketViewController: UIViewController {
         tableView.register(basketItemCell, forCellReuseIdentifier: self.basketItemCell)
         
         tableView.tableFooterView = UIView()
-        updateTotalLabels(itemsInBasket.isEmpty)
+        updateTotalLabels(itemOrdersInBasket.isEmpty)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,29 +101,35 @@ class BasketViewController: UIViewController {
             }
 
             self.basket = basket
-            self.getItemsFromBasket(withIds: basket.itemIds)
+            self.getItemOrdersFromBasket(basket.itemOrders)
         }
     }
     
-    private func getItemsFromBasket(withIds ids: [String]) {
-        downloadItems(withIds: ids) { items in
-            self.itemsInBasket = items
-            self.updateTotalLabels(items.isEmpty)
+    private func getItemOrdersFromBasket(_ orders: [Basket.ItemOrder]) {
+        downloadItemsForBasketOrders(orders) { itemOrders in
+            self.itemOrdersInBasket = itemOrders
         }
     }
     
     // remove item from basket, update itemsInBasket array and update the labels
-    private func removeItemFromBasket(_ item: Item) {
+    private func removeItemFromBasket(_ itemOrder: Basket.ItemOrder) {
         guard let basket = basket else {
             return
         }
         
-        guard let index = itemsInBasket.firstIndex(where: { $0.id == item.id }) else { return }
-        itemsInBasket.remove(at: index)
+        guard let index = itemOrdersInBasket.firstIndex(where: { $0.itemId == itemOrder.itemId }) else { return }
+        itemOrdersInBasket.remove(at: index)
         refreshUI()
         
-        basket.itemIds.removeAll { $0 == item.id }
-        updateBasketInFirestore(basket, withValues: [Constants.itemIds : basket.itemIds]) { error in
+        basket.itemOrders.removeAll { $0.itemId == itemOrder.itemId }
+        updateBasket(basket)
+    }
+    
+    private func updateBasket(_ basket: Basket) {
+        var orders = [[String: Any]]()
+        itemOrdersInBasket.forEach { orders.append($0.dictionary) }
+        // TODO: update this function call
+        updateBasketInFirestore(basket, withValues: [Constants.itemOrders : orders]) { error in
             if let error = error {
                 print(error.localizedDescription)
             }
@@ -153,9 +160,10 @@ class BasketViewController: UIViewController {
     private func finishPayment(token: STPToken) {
         totalPrice = 0
         
-        for item in itemsInBasket {
-            purchasedItemIds.append(item.id)
-            totalPrice += Int(floor(item.price))
+        for order in itemOrdersInBasket {
+            purchasedOrders.append(order)
+//            purchasedItemIds.append(item.id)
+            totalPrice += Int(floor(order.item.price))
         }
         
         // prepare total price for Stripe
@@ -176,9 +184,9 @@ class BasketViewController: UIViewController {
     
     // MARK: Helper methods
     private func updateTotalLabels(_ isEmpty: Bool) {
-        footerView.isHidden = itemsInBasket.isEmpty
+        footerView.isHidden = itemOrdersInBasket.isEmpty
         
-        totalItemsLabel.text = isEmpty ? "" : "(\(itemsInBasket.count) items)"
+        totalItemsLabel.text = isEmpty ? "" : "(\(itemOrdersInBasket.count) \(itemOrdersInBasket.count == 1 ? "item" : "items")"
         subtotalPriceLabel.text = subtotalBasketPrice.currencyValue
         shippingPriceLabel.text = shippingPrice.currencyValue
         totalPriceLabel.text = totalBasketPrice.currencyValue
@@ -187,17 +195,17 @@ class BasketViewController: UIViewController {
     }
     
     private func updateCheckoutButtonStatus() {
-        checkoutButton.isEnabled = !itemsInBasket.isEmpty
+        checkoutButton.isEnabled = !itemOrdersInBasket.isEmpty
     }
     
     private func refreshUI() {
         tableView.reloadData()
-        updateTotalLabels(itemsInBasket.isEmpty)
+        updateTotalLabels(itemOrdersInBasket.isEmpty)
     }
     
     private func emptyBasket() {
         purchasedItemIds.removeAll()
-        itemsInBasket.removeAll()
+        itemOrdersInBasket.removeAll()
         refreshUI()
         
         basket?.itemIds = []
@@ -241,13 +249,13 @@ class BasketViewController: UIViewController {
 extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        itemsInBasket.count
+        itemOrdersInBasket.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: basketItemCell, for: indexPath) as! BasketItemCell
         
-        cell.generateCell(withItem: itemsInBasket[indexPath.row])
+        cell.generateCell(withItemOrder: itemOrdersInBasket[indexPath.row])
         cell.delegate = self
         
         return cell
@@ -260,7 +268,7 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            let item = itemsInBasket[indexPath.row]
+            let item = itemOrdersInBasket[indexPath.row]
             
             // remove item from our basket
             removeItemFromBasket(item)
@@ -270,7 +278,7 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        showItemViewController(with: itemsInBasket[indexPath.row])
+        showItemViewController(with: itemOrdersInBasket[indexPath.row].item)
     }
     
 }
@@ -289,15 +297,17 @@ extension BasketViewController: CardInfoViewControllerDelegate {
 
 extension BasketViewController: BasketItemCellDelegate {
     
-    func updateTotalItemPrice(_ cell: BasketItemCell, for item: Item, itemCount: Int) {
-        updateTotalLabels(false)
-        updateBasketInFirestore(basket!, withValues: [:]) { error in
-            print(error?.localizedDescription)
+    func updateTotalItemPrice(_ cell: BasketItemCell, for item: ItemOrder, itemCount: Int) {
+        if let orderIndex = itemOrdersInBasket.firstIndex(where: { $0.itemId == item.itemId }),
+           let basket = basket {
+            itemOrdersInBasket[orderIndex].itemCount = itemCount
+            updateBasket(basket)
         }
+        updateTotalLabels(itemOrdersInBasket.isEmpty)
     }
     
-    func removeItemFromBasket(_ cell: BasketItemCell, item: Item) {
-        removeItemFromBasket(item)
+    func removeItemOrderFromBasket(_ cell: BasketItemCell, itemOrder: ItemOrder) {
+        removeItemFromBasket(itemOrder)
     }
     
 }

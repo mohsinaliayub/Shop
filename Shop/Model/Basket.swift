@@ -8,9 +8,10 @@
 import Foundation
 
 class Basket {
-    struct ItemOrder {
+    class ItemOrder: Codable {
         var itemId: String
         var itemCount: Int
+        var item: Item!
         
         var dictionary: [String: Any] {
             [
@@ -19,7 +20,7 @@ class Basket {
             ]
         }
         
-        init(itemId: String, itemCount: Int = 1) {
+        init(itemId: String, itemCount: Int) {
             self.itemId = itemId
             self.itemCount = itemCount
         }
@@ -32,13 +33,22 @@ class Basket {
     
     var id: String
     var ownerId: String
+    var itemOrders: [ItemOrder]
+    var itemOrdersDict: [[String: Any]] {
+        var dict = [[String: Any]]()
+        for order in itemOrders {
+            dict.append(order.dictionary)
+        }
+        return dict
+    }
     var itemIds: [String]
     
     var dictionary: [String: Any] {
         [
             Constants.objectId: id,
             Constants.ownerId: ownerId,
-            Constants.itemIds: itemIds
+            Constants.itemIds: itemIds,
+            Constants.itemOrders: itemOrdersDict
         ]
     }
     
@@ -46,12 +56,22 @@ class Basket {
         self.id = UUID().uuidString
         self.ownerId = ownerId
         self.itemIds = []
+        self.itemOrders = []
     }
     
     init(dictionary: [String: Any]) {
         id = dictionary[Constants.objectId] as! String
         ownerId = dictionary[Constants.ownerId] as! String
         itemIds = dictionary[Constants.itemIds] as! [String]
+        itemOrders = []
+        let orders = dictionary[Constants.itemOrders] as! [[String: Any]]
+        for order in orders {
+            itemOrders.append(ItemOrder(dictionary: order))
+        }
+    }
+    
+    func addItemOrder(withId itemId: String, count: Int) {
+        itemOrders.append(ItemOrder(itemId: itemId, itemCount: count))
     }
 }
 
@@ -59,6 +79,35 @@ class Basket {
 
 func saveBasketToFirestore(_ basket: Basket) {
     firebaseReference(.basket).document(basket.id).setData(basket.dictionary)
+}
+
+func downloadItemsForBasketOrders(_ itemOrders: [Basket.ItemOrder], completion: @escaping ([Basket.ItemOrder]) -> Void) {
+    var count = 0
+    var orders = [Basket.ItemOrder]()
+    
+    for order in itemOrders {
+        firebaseReference(.items).document(order.itemId).getDocument { snapshot, error in
+            count += 1
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let snapshot = snapshot, snapshot.exists else {
+                return
+            }
+            
+            // download item, append new item to our return array
+            let item = Item(dictionary: snapshot.data()!)
+            let itemOrder = Basket.ItemOrder(itemId: order.itemId, itemCount: order.itemCount)
+            itemOrder.item = item
+            orders.append(itemOrder)
+            
+            if count == itemOrders.count {
+                completion(orders)
+            }
+        }
+    }
 }
 
 func downloadBasketFromFirestore(for ownerId: String, completion: @escaping (Basket?, Error?) -> Void) {
