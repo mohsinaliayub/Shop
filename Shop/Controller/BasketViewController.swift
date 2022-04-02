@@ -121,15 +121,12 @@ class BasketViewController: UIViewController {
         itemOrdersInBasket.remove(at: index)
         refreshUI()
         
-        basket.itemOrders.removeAll { $0.itemId == itemOrder.itemId }
         updateBasket(basket)
     }
     
     private func updateBasket(_ basket: Basket) {
-        var orders = [[String: Any]]()
-        itemOrdersInBasket.forEach { orders.append($0.dictionary) }
-        // TODO: update this function call
-        updateBasketInFirestore(basket, withValues: [Constants.itemOrders : orders]) { error in
+        basket.itemOrders = itemOrdersInBasket
+        updateBasketInFirestore(basket) { error in
             if let error = error {
                 print(error.localizedDescription)
             }
@@ -208,15 +205,11 @@ class BasketViewController: UIViewController {
         itemOrdersInBasket.removeAll()
         refreshUI()
         
-        basket?.itemIds = []
-        
-        updateBasketInFirestore(basket!, withValues: [Constants.itemIds: basket!.itemIds]) { error in
-            if let error = error {
-                print(error.localizedDescription)
-                
-                return
-            }
+        guard let basket = basket else {
+            return
         }
+
+        updateBasket(basket)
     }
     
     private func addItemsToPurchaseHistory(withIds itemIds: [String]) {

@@ -41,13 +41,11 @@ class Basket {
         }
         return dict
     }
-    var itemIds: [String]
     
     var dictionary: [String: Any] {
         [
             Constants.objectId: id,
             Constants.ownerId: ownerId,
-            Constants.itemIds: itemIds,
             Constants.itemOrders: itemOrdersDict
         ]
     }
@@ -55,14 +53,12 @@ class Basket {
     init(ownerId: String) {
         self.id = UUID().uuidString
         self.ownerId = ownerId
-        self.itemIds = []
         self.itemOrders = []
     }
     
     init(dictionary: [String: Any]) {
         id = dictionary[Constants.objectId] as! String
         ownerId = dictionary[Constants.ownerId] as! String
-        itemIds = dictionary[Constants.itemIds] as! [String]
         itemOrders = []
         let orders = dictionary[Constants.itemOrders] as! [[String: Any]]
         for order in orders {
@@ -133,10 +129,12 @@ func downloadBasketFromFirestore(for ownerId: String, completion: @escaping (Bas
     }
 }
 
-func updateBasketInFirestore(_ basket: Basket, withValues values: [String: Any],
-                             completion: @escaping (_ error: Error?) -> Void) {
+func updateBasketInFirestore(_ basket: Basket, completion: @escaping (_ error: Error?) -> Void) {
+    var orders = [[String: Any]]()
+    basket.itemOrders.forEach { orders.append($0.dictionary) }
     
-    firebaseReference(.basket).document(basket.id).updateData(values) { error in
+    firebaseReference(.basket).document(basket.id).updateData([Constants.itemOrders: orders]) { error in
         completion(error)
     }
 }
+

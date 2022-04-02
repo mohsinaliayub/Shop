@@ -101,7 +101,7 @@
                         </connections>
                     </button>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" name="AppBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="tvm-0g-1Ym" firstAttribute="leading" secondItem="X7K-HP-efH" secondAttribute="leading" id="6br-y8-ijE"/>
                     <constraint firstItem="bD1-Hs-838" firstAttribute="bottom" secondItem="xcY-lv-L7f" secondAttribute="bottom" id="97C-SP-Ad4"/>
@@ -135,11 +135,14 @@
         <image name="minus.circle" catalog="system" width="128" height="121"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="AppBackgroundColor">
+            <color red="0.93725490196078431" green="0.92549019607843142" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="AppButtonColor">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppPrimaryTextColor">
-            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10999999940395355" green="0.10999999940395355" blue="0.10999999940395355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppSecondaryTextColor">
             <color red="0.67450980392156867" green="0.6705882352941176" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -96,9 +96,7 @@ class ItemDetailViewController: UIViewController {
 
             // basket already exists, append an item and update in the firestore
             basket.addItemOrder(withId: self.item.id, count: 1)
-            // TODO: If item with same ID already exists in the Basket, just update its count
-            
-            self.updateBasket(basket, withValues: [Constants.itemIds : basket.itemOrdersDict])
+            self.updateBasket(basket)
         }
         
     }
@@ -115,8 +113,8 @@ class ItemDetailViewController: UIViewController {
         self.hud.showHUD(withText: "Added to basket!", indicatorType: .success, showIn: view)
     }
     
-    private func updateBasket(_ basket: Basket, withValues values: [String: Any]) {
-        updateBasketInFirestore(basket, withValues: values) { error in
+    private func updateBasket(_ basket: Basket) {
+        updateBasketInFirestore(basket) { error in
             // Error happened, handle it
             if let error = error {
                 // TODO: show a more useful error
