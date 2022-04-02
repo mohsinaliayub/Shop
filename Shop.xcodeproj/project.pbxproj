@@ -92,6 +92,8 @@
 		428C00E727F4D9F0005F8951 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 428C00E627F4D9F0005F8951 /* Alamofire */; };
 		428C00E927F4DEFB005F8951 /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428C00E827F4DEFB005F8951 /* StripeClient.swift */; };
 		428C00EB27F4F92D005F8951 /* CardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428C00EA27F4F92D005F8951 /* CardInfoViewController.swift */; };
+		429FB59127F84B010030ADD6 /* BasketItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 429FB59027F84B010030ADD6 /* BasketItemCell.xib */; };
+		429FB59327F851E20030ADD6 /* BasketItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429FB59227F851E20030ADD6 /* BasketItemCell.swift */; };
 		42C80FA127F1985200779907 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA027F1985200779907 /* ItemTableViewCell.swift */; };
 		42C80FA327F19D6000779907 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA227F19D6000779907 /* HelperFunctions.swift */; };
 		42C80FA527F1A13800779907 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA427F1A13800779907 /* ItemDetailViewController.swift */; };
@@ -185,6 +187,8 @@
 		4277D08827F20C6300A5C987 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		428C00E827F4DEFB005F8951 /* StripeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
 		428C00EA27F4F92D005F8951 /* CardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewController.swift; sourceTree = "<group>"; };
+		429FB59027F84B010030ADD6 /* BasketItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketItemCell.xib; sourceTree = "<group>"; };
+		429FB59227F851E20030ADD6 /* BasketItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketItemCell.swift; sourceTree = "<group>"; };
 		42C80FA027F1985200779907 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		42C80FA227F19D6000779907 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		42C80FA427F1A13800779907 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
@@ -265,12 +269,11 @@
 		426AD05E27F03E2C00F420D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				429FB58E27F835030030ADD6 /* Services */,
 				426AD07427F04E9C00F420D4 /* Category.swift */,
 				426AD07A27F075B600F420D4 /* Item.swift */,
 				421F360027F1B5E1000EC6DF /* Basket.swift */,
 				4277D08627F1EA0C00A5C987 /* User.swift */,
-				42F6783F27F4A1EC00CFCDFD /* AlgoliaService.swift */,
-				428C00E827F4DEFB005F8951 /* StripeClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 		426AD05F27F03E3300F420D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				429FB58F27F84AEB0030ADD6 /* Cells */,
 				426AD05027F03E1E00F420D4 /* Main.storyboard */,
 				426AD05527F03E1F00F420D4 /* LaunchScreen.storyboard */,
 			);
@@ -308,6 +312,7 @@
 				426AD06D27F04AF600F420D4 /* CategoryCollectionViewCell.swift */,
 				42C80FA027F1985200779907 /* ItemTableViewCell.swift */,
 				42C80FA627F1A44800779907 /* ImageCollectionViewCell.swift */,
+				429FB59227F851E20030ADD6 /* BasketItemCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -482,6 +487,23 @@
 			path = Videos;
 			sourceTree = "<group>";
 		};
+		429FB58E27F835030030ADD6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				428C00E827F4DEFB005F8951 /* StripeClient.swift */,
+				42F6783F27F4A1EC00CFCDFD /* AlgoliaService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		429FB58F27F84AEB0030ADD6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				429FB59027F84B010030ADD6 /* BasketItemCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BCAFE09631F265A1C3D4A4F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +602,7 @@
 				426AD07027F04C2400F420D4 /* GoogleService-Info.plist in Resources */,
 				426AD0D327F0A48200F420D4 /* Gallery.bundle in Resources */,
 				426AD05427F03E1F00F420D4 /* Assets.xcassets in Resources */,
+				429FB59127F84B010030ADD6 /* BasketItemCell.xib in Resources */,
 				426AD05227F03E1E00F420D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,6 +712,7 @@
 				42F6783C27F4705B00CFCDFD /* PurchasedHistoryTableViewController.swift in Sources */,
 				426AD0E827F0A48200F420D4 /* ArrowButton.swift in Sources */,
 				426AD0E527F0A48200F420D4 /* EmptyView.swift in Sources */,
+				429FB59327F851E20030ADD6 /* BasketItemCell.swift in Sources */,
 				426AD0D627F0A48200F420D4 /* Constraints.swift in Sources */,
 				426AD0E427F0A48200F420D4 /* UIScrollView+Extensions.swift in Sources */,
 				426AD0DB27F0A48200F420D4 /* EventHub.swift in Sources */,

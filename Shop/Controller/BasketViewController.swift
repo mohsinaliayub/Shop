@@ -171,11 +171,6 @@ class BasketViewController: UIViewController {
         updateTotalLabels(itemsInBasket.isEmpty)
     }
     
-    // TODO: Delete this function after adding payment functionality
-    private func testAddItemsToPurchasedHistory() {
-        itemsInBasket.forEach { purchasedItemIds.append($0.id) }
-    }
-    
     private func emptyBasket() {
         purchasedItemIds.removeAll()
         itemsInBasket.removeAll()
