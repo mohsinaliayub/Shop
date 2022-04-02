@@ -45,6 +45,13 @@ struct Constants {
     // Colors
     static let appColor = UIColor(red: 0.9998469949, green: 0.4941213727, blue: 0.4734867811, alpha: 1)
     
+    struct Colors {
+        static let appBackgroundColor = UIColor(named: "AppBackgroundColor")!
+        static let appPrimaryTextColor = UIColor(named: "AppPrimaryTextColor")!
+        static let appSecondaryTextColor = UIColor(named: "AppSecondaryTextColor")!
+        static let appButtonColor = UIColor(named: "AppButtonColor")!
+    }
+    
     struct Algolia {
         public static let applicationId = "YOUR ALGOLIA APP ID"
         public static let publicKey = "YOUR ALGOLIA SEARCH-ONLY API KEY"

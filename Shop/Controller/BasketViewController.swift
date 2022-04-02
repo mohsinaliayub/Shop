@@ -18,6 +18,8 @@ class BasketViewController: UIViewController {
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
+    @IBOutlet weak var subtotalPriceLabel: UILabel!
+    @IBOutlet weak var shippingPriceLabel: UILabel!
     
     // properties
     private let hud = JGProgressHUD(style: .dark)
@@ -33,10 +35,14 @@ class BasketViewController: UIViewController {
             }
         }
     }
-    var totalBasketPrice: String {
-        let totalPrice = itemsInBasket.reduce(0.0) { $0 + $1.price }
-        return "Total price: " + convertToCurrency(totalPrice)
+    
+    var shippingPrice: Double { 4.99 }
+    var totalBasketPrice: Double { subtotalBasketPrice + shippingPrice }
+    var subtotalBasketPrice: Double {
+        let subtotal = itemsInBasket.reduce(0.0) { $0 + $1.price }
+        return subtotal
     }
+    
     var totalPrice = 0
     var purchasedItemIds = [String]()
     
@@ -48,7 +54,7 @@ class BasketViewController: UIViewController {
         let basketItemCell = UINib(nibName: "BasketItemCell", bundle: nil)
         tableView.register(basketItemCell, forCellReuseIdentifier: self.basketItemCell)
         
-        tableView.tableFooterView = footerView
+        tableView.tableFooterView = UIView()
         updateTotalLabels(itemsInBasket.isEmpty)
     }
     
@@ -63,6 +69,14 @@ class BasketViewController: UIViewController {
     }
     
     // MARK: Actions
+    
+    @IBAction func promoCodeValueChanged(_ sender: UITextField) {
+        
+    }
+    
+    @IBAction func applyVoucherButtonPressed(_ sender: UIButton) {
+        
+    }
     
     @IBAction func checkoutItems(_ sender: UIButton) {
         // if user has verified their email address and provided their name & address information
@@ -162,16 +176,16 @@ class BasketViewController: UIViewController {
     
     // MARK: Helper methods
     private func updateTotalLabels(_ isEmpty: Bool) {
-        totalItemsLabel.text = isEmpty ? "0" : "\(itemsInBasket.count)"
-        totalPriceLabel.text = totalBasketPrice
+        totalItemsLabel.text = isEmpty ? "" : "(\(itemsInBasket.count) items)"
+        subtotalPriceLabel.text = subtotalBasketPrice.currencyValue
+        shippingPriceLabel.text = shippingPrice.currencyValue
+        totalPriceLabel.text = totalBasketPrice.currencyValue
         
         updateCheckoutButtonStatus()
     }
     
     private func updateCheckoutButtonStatus() {
         checkoutButton.isEnabled = !itemsInBasket.isEmpty
-        
-        checkoutButton.backgroundColor = checkoutButton.isEnabled ? .opaqueSeparator : .gray
     }
     
     private func refreshUI() {

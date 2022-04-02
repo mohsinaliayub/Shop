@@ -19,6 +19,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xcY-lv-L7f">
                         <rect key="frame" x="20" y="10" width="70" height="70"/>
+                        <color key="backgroundColor" name="ApplicationColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="Pkc-Ra-UgY"/>
                             <constraint firstAttribute="width" constant="70" id="iw2-Jq-GWZ"/>
@@ -100,6 +101,7 @@
                         </connections>
                     </button>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="tvm-0g-1Ym" firstAttribute="leading" secondItem="X7K-HP-efH" secondAttribute="leading" id="6br-y8-ijE"/>
                     <constraint firstItem="bD1-Hs-838" firstAttribute="bottom" secondItem="xcY-lv-L7f" secondAttribute="bottom" id="97C-SP-Ad4"/>
@@ -141,6 +143,9 @@
         </namedColor>
         <namedColor name="AppSecondaryTextColor">
             <color red="0.67450980392156867" green="0.6705882352941176" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ApplicationColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
