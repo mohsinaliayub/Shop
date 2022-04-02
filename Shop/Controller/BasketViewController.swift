@@ -22,6 +22,7 @@ class BasketViewController: UIViewController {
     // properties
     private let hud = JGProgressHUD(style: .dark)
     private let itemCellReuseIdentifier = "itemCell"
+    private let basketItemCell = "basketItemCell"
     private let itemDetailVCStoryboardId = "itemDetailViewController"
     
     var basket: Basket?
@@ -44,6 +45,9 @@ class BasketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let basketItemCell = UINib(nibName: "BasketItemCell", bundle: nil)
+        tableView.register(basketItemCell, forCellReuseIdentifier: self.basketItemCell)
+        
         tableView.tableFooterView = footerView
         updateTotalLabels(itemsInBasket.isEmpty)
     }
@@ -221,9 +225,12 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: itemCellReuseIdentifier, for: indexPath) as! ItemTableViewCell
-        
-        cell.generateCell(with: itemsInBasket[indexPath.row])
+//        let cell = tableView.dequeueReusableCell(withIdentifier: itemCellReuseIdentifier, for: indexPath) as! ItemTableViewCell
+//
+//        cell.generateCell(with: itemsInBasket[indexPath.row])
+//
+//        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: basketItemCell, for: indexPath) as! BasketItemCell
         
         return cell
     }
