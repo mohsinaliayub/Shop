@@ -94,6 +94,7 @@
 		428C00EB27F4F92D005F8951 /* CardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428C00EA27F4F92D005F8951 /* CardInfoViewController.swift */; };
 		429FB59127F84B010030ADD6 /* BasketItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 429FB59027F84B010030ADD6 /* BasketItemCell.xib */; };
 		429FB59327F851E20030ADD6 /* BasketItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429FB59227F851E20030ADD6 /* BasketItemCell.swift */; };
+		429FB59527F858D00030ADD6 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429FB59427F858D00030ADD6 /* Double+Extension.swift */; };
 		42C80FA127F1985200779907 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA027F1985200779907 /* ItemTableViewCell.swift */; };
 		42C80FA327F19D6000779907 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA227F19D6000779907 /* HelperFunctions.swift */; };
 		42C80FA527F1A13800779907 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C80FA427F1A13800779907 /* ItemDetailViewController.swift */; };
@@ -189,6 +190,7 @@
 		428C00EA27F4F92D005F8951 /* CardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewController.swift; sourceTree = "<group>"; };
 		429FB59027F84B010030ADD6 /* BasketItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketItemCell.xib; sourceTree = "<group>"; };
 		429FB59227F851E20030ADD6 /* BasketItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketItemCell.swift; sourceTree = "<group>"; };
+		429FB59427F858D00030ADD6 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		42C80FA027F1985200779907 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		42C80FA227F19D6000779907 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		42C80FA427F1A13800779907 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				426AD0FD27F0B11300F420D4 /* StorageService.swift */,
 				42C80FA227F19D6000779907 /* HelperFunctions.swift */,
 				42F6783927F466D200CFCDFD /* JGProgressHUDExtension.swift */,
+				429FB59427F858D00030ADD6 /* Double+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				426AD07227F04D6B00F420D4 /* FirebaseCollectionReference.swift in Sources */,
 				4277D08527F1E6BF00A5C987 /* LoginViewController.swift in Sources */,
 				426AD0F227F0A48200F420D4 /* PageIndicator.swift in Sources */,
+				429FB59527F858D00030ADD6 /* Double+Extension.swift in Sources */,
 				42F6783827F465B200CFCDFD /* EditProfileViewController.swift in Sources */,
 				426AD0F727F0A48200F420D4 /* VideosLibrary.swift in Sources */,
 				426AD07D27F09C0400F420D4 /* AddItemViewController.swift in Sources */,

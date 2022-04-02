@@ -97,13 +97,17 @@ class BasketViewController: UIViewController {
         }
     }
     
-    // TODO: Provide a fix in the UI: If there are multiple items in the basket with same id, they should be displayed in a single cell with a number of items button next to them.
-    private func removeItemFromBasket(at index: Int) {
+    // remove item from basket, update itemsInBasket array and update the labels
+    private func removeItemFromBasket(_ item: Item) {
         guard let basket = basket else {
             return
         }
-
-        basket.itemIds.remove(at: index)
+        
+        guard let index = itemsInBasket.firstIndex(where: { $0.id == item.id }) else { return }
+        itemsInBasket.remove(at: index)
+        refreshUI()
+        
+        basket.itemIds.removeAll { $0 == item.id }
         updateBasketInFirestore(basket, withValues: [Constants.itemIds : basket.itemIds]) { error in
             if let error = error {
                 print(error.localizedDescription)
@@ -225,12 +229,10 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: itemCellReuseIdentifier, for: indexPath) as! ItemTableViewCell
-//
-//        cell.generateCell(with: itemsInBasket[indexPath.row])
-//
-//        return cell
         let cell = tableView.dequeueReusableCell(withIdentifier: basketItemCell, for: indexPath) as! BasketItemCell
+        
+        cell.generateCell(withItem: itemsInBasket[indexPath.row])
+        cell.delegate = self
         
         return cell
     }
@@ -242,12 +244,10 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            _ = itemsInBasket[indexPath.row] // Need a fix
-            itemsInBasket.remove(at: indexPath.row)
-            refreshUI()
+            let item = itemsInBasket[indexPath.row]
             
             // remove item from our basket
-            removeItemFromBasket(at: indexPath.row)
+            removeItemFromBasket(item)
         }
     }
     
@@ -267,6 +267,20 @@ extension BasketViewController: CardInfoViewControllerDelegate {
     
     func didFinishRetrievingToken(token: STPToken) {
         finishPayment(token: token)
+    }
+    
+}
+
+extension BasketViewController: BasketItemCellDelegate {
+    
+    func updateTotalItemPrice(_ cell: BasketItemCell, for item: Item, itemCount: Int) {
+        // TODO: Update the total price
+        print("Update the price")
+    }
+    
+    func removeItemFromBasket(_ cell: BasketItemCell, item: Item) {
+        removeItemFromBasket(item)
+        
     }
     
 }
