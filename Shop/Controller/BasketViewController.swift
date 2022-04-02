@@ -36,10 +36,10 @@ class BasketViewController: UIViewController {
         }
     }
     
-    var shippingPrice: Double { 4.99 }
+    var shippingPrice: Double { itemsInBasket.isEmpty ? 0 : 4.99 }
     var totalBasketPrice: Double { subtotalBasketPrice + shippingPrice }
     var subtotalBasketPrice: Double {
-        let subtotal = itemsInBasket.reduce(0.0) { $0 + $1.price }
+        let subtotal = itemsInBasket.reduce(0.0) { $0 + ($1.price * Double($1.itemCountInBasket)) }
         return subtotal
     }
     
@@ -176,6 +176,8 @@ class BasketViewController: UIViewController {
     
     // MARK: Helper methods
     private func updateTotalLabels(_ isEmpty: Bool) {
+        footerView.isHidden = itemsInBasket.isEmpty
+        
         totalItemsLabel.text = isEmpty ? "" : "(\(itemsInBasket.count) items)"
         subtotalPriceLabel.text = subtotalBasketPrice.currencyValue
         shippingPriceLabel.text = shippingPrice.currencyValue
@@ -288,13 +290,14 @@ extension BasketViewController: CardInfoViewControllerDelegate {
 extension BasketViewController: BasketItemCellDelegate {
     
     func updateTotalItemPrice(_ cell: BasketItemCell, for item: Item, itemCount: Int) {
-        // TODO: Update the total price
-        print("Update the price")
+        updateTotalLabels(false)
+        updateBasketInFirestore(basket!, withValues: [:]) { error in
+            print(error?.localizedDescription)
+        }
     }
     
     func removeItemFromBasket(_ cell: BasketItemCell, item: Item) {
         removeItemFromBasket(item)
-        
     }
     
 }

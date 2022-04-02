@@ -33,6 +33,7 @@ class BasketItemCell: UITableViewCell {
             itemOrderCountLabel.text = "\(itemCount)"
             itemPriceLabel.text = (item.price * Double(itemCount)).currencyValue
             updateButtonsDisableStatus()
+            item.itemOrderCount = itemCount
             delegate?.updateTotalItemPrice(self, for: item, itemCount: itemCount)
         }
     }
@@ -68,7 +69,7 @@ class BasketItemCell: UITableViewCell {
         
         itemTitleLabel.text = item.name
         itemDescriptionLabel.text = item.description
-        itemCount = 1 // TODO: Update it after model is updated
+        itemCount = item.itemCountInBasket
         
         // if there's an item image, download and display it
         if !item.imageLinks.isEmpty {

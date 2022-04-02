@@ -13,7 +13,15 @@ class Item: Codable {
     var name: String
     var description: String
     var price: Double
+    var itemOrderCount: Int?
     var imageLinks: [String]
+    var itemCountInBasket: Int {
+        guard let itemOrderCount = itemOrderCount else {
+            return 1
+        }
+
+        return itemOrderCount
+    }
     
     var dictionary: [String: Any] {
         [
@@ -22,7 +30,8 @@ class Item: Codable {
             Constants.name: name,
             Constants.description: description,
             Constants.price: price,
-            Constants.imageLinks: imageLinks
+            Constants.imageLinks: imageLinks,
+            Constants.itemOrderCount: itemOrderCount as Any
         ]
     }
     
@@ -42,6 +51,7 @@ class Item: Codable {
         description = dictionary[Constants.description] as! String
         price = dictionary[Constants.price] as! Double
         imageLinks = dictionary[Constants.imageLinks] as! [String]
+        itemOrderCount = dictionary[Constants.itemOrderCount] as? Int
     }
     
 }

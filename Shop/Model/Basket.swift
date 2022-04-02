@@ -8,6 +8,28 @@
 import Foundation
 
 class Basket {
+    struct ItemOrder {
+        var itemId: String
+        var itemCount: Int
+        
+        var dictionary: [String: Any] {
+            [
+                Constants.objectId: itemId,
+                Constants.itemOrderCount: itemCount
+            ]
+        }
+        
+        init(itemId: String, itemCount: Int = 1) {
+            self.itemId = itemId
+            self.itemCount = itemCount
+        }
+        
+        init(dictionary: [String: Any]) {
+            itemId = dictionary[Constants.objectId] as! String
+            itemCount = dictionary[Constants.itemOrderCount] as! Int
+        }
+    }
+    
     var id: String
     var ownerId: String
     var itemIds: [String]

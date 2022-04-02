@@ -27,6 +27,7 @@ struct Constants {
     static let description = "description"
     static let price = "price"
     static let imageLinks = "imageLinks"
+    static let itemOrderCount = "itemOrderCount"
     
     // Basket
     static let ownerId = "ownerId"
