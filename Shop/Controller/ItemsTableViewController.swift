@@ -11,7 +11,8 @@ class ItemsTableViewController: UITableViewController {
     
     // properties
     private let addItemSegue = "addItemSegue"
-    private let itemCell = "itemCell"
+    private let itemDetailSegue = "itemDetail"
+    private let itemCell = "itemInfoCell"
     private let itemDetailVCStoryboardId = "itemDetailViewController"
     
     var category: Category!
@@ -25,6 +26,9 @@ class ItemsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let itemInfoNib = UINib(nibName: "ItemInfoCell", bundle: nil)
+        tableView.register(itemInfoNib, forCellReuseIdentifier: itemCell)
         
         tableView.tableFooterView = UIView() // remove all empty cells
         self.title = category?.name
@@ -63,9 +67,10 @@ class ItemsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: itemCell, for: indexPath) as! ItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: itemCell, for: indexPath) as! ItemInfoCell
 
-        cell.generateCell(with: items[indexPath.row])
+        cell.showCell(withItem: items[indexPath.row])
+        cell.backgroundColor = .white
 
         return cell
     }
@@ -74,7 +79,7 @@ class ItemsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        showItemViewController(with: items[indexPath.row])
+        performSegue(withIdentifier: itemDetailSegue, sender: indexPath)
     }
     
     // MARK: - Navigation
@@ -84,15 +89,10 @@ class ItemsTableViewController: UITableViewController {
         if segue.identifier == addItemSegue,
            let addItemViewController = segue.destination as? AddItemViewController {
             addItemViewController.categoryId = category.id
+        } else if segue.identifier == itemDetailSegue,
+                  let itemDetailVC = segue.destination as? ItemDetailViewController {
+            itemDetailVC.item = items[(sender as! IndexPath).row]
         }
-    }
-    
-    private func showItemViewController(with item: Item) {
-        let itemDetailVC = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: itemDetailVCStoryboardId) as! ItemDetailViewController
-        
-        itemDetailVC.item = item
-        self.navigationController?.pushViewController(itemDetailVC, animated: true)
     }
 
 }

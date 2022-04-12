@@ -22,7 +22,7 @@ class StripeClient {
         fatalError()
     }
     
-    func createAndConfirmPayment(token: STPToken, amount: Int, completion: @escaping (Error?) -> Void) {
+    func createAndConfirmPayment(token: STPToken, amount: Double, completion: @escaping (Error?) -> Void) {
         let url = baseURL.appendingPathComponent("charge")
         
         let params: [String: Any] = [

@@ -13,9 +13,16 @@ class User {
     var email: String
     var firstName: String
     var lastName: String
-    var purchasedItemIds: [String]
     var fullAddress: String?
     var onBoard: Bool
+    var purchasedOrders: [ItemOrder]
+    var purchasedOrdersDict: [[String: Any]] {
+        var dict = [[String: Any]]()
+        for order in purchasedOrders {
+            dict.append(order.dictionary)
+        }
+        return dict
+    }
     
     var fullName: String {
         "\(firstName) \(lastName)"
@@ -26,9 +33,9 @@ class User {
             Constants.email: email,
             Constants.firstName: firstName,
             Constants.lastName: lastName,
-            Constants.purchasedItemIds: purchasedItemIds,
             Constants.fullAddress: fullAddress as Any,
-            Constants.onBoard: onBoard
+            Constants.onBoard: onBoard,
+            Constants.purchasedOrders: purchasedOrdersDict
         ]
     }
     
@@ -38,7 +45,7 @@ class User {
         self.firstName = firstName
         self.lastName = lastName
         fullAddress = ""
-        purchasedItemIds = []
+        purchasedOrders = []
         onBoard = false
     }
     
@@ -47,9 +54,13 @@ class User {
         email = dictionary[Constants.email] as! String
         firstName = dictionary[Constants.firstName] as! String
         lastName = dictionary[Constants.lastName] as! String
-        purchasedItemIds = dictionary[Constants.purchasedItemIds] as! [String]
         fullAddress = dictionary[Constants.fullAddress] as? String
         onBoard = dictionary[Constants.onBoard] as! Bool
+        purchasedOrders = []
+        let orders = dictionary[Constants.purchasedOrders] as! [[String: Any]]
+        for order in orders {
+            purchasedOrders.append(ItemOrder(dictionary: order))
+        }
     }
     
     // MARK: Return current user

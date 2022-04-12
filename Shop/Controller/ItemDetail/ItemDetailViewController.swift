@@ -11,10 +11,17 @@ import JGProgressHUD
 class ItemDetailViewController: UIViewController {
 
     // outlets
-    @IBOutlet weak var itemImagesCollectionView: UICollectionView!
+    @IBOutlet weak var itemDetailView: UIView! {
+        didSet {
+            itemDetailView.layer.cornerRadius = 35
+            itemDetailView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        }
+    }
+    @IBOutlet weak var itemImagesContainer: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    private var itemImagesViewController: ItemImagesViewController!
     
     // properties
     private let imageCell = "imageCell"
@@ -28,7 +35,7 @@ class ItemDetailViewController: UIViewController {
     var itemImages = [UIImage?]() {
         didSet {
             DispatchQueue.main.async {
-                self.itemImagesCollectionView.reloadData()
+                self.itemImagesViewController.images = self.itemImages
             }
         }
     }
@@ -39,19 +46,13 @@ class ItemDetailViewController: UIViewController {
         setupUI()
         downloadPictures()
         
+        if let childVC = self.children.first as? ItemImagesViewController {
+            itemImagesViewController = childVC
+        }
+        
         self.navigationItem.leftBarButtonItems = [
             UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backAction))
         ]
-        
-        self.navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(named: "addToBasket"), style: .plain, target: self, action: #selector(addToBasket))
-        ]
-        
-        let itemOrder = Basket.ItemOrder(itemId: "CFFO", itemCount: 2)
-        print(itemOrder)
-        
-        let item = Item(categoryId: "CC", name: "DD", description: "EE", price: 4.99)
-        print(item.dictionary)
     }
     
     // MARK: - Set Up UI
@@ -60,7 +61,7 @@ class ItemDetailViewController: UIViewController {
         title = item.name
         nameLabel.text = item.name
         priceLabel.text = convertToCurrency(item.price)
-        descriptionTextView.text = item.description
+        descriptionLabel.text = item.description
     }
     
     private func downloadPictures() {
@@ -79,7 +80,7 @@ class ItemDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc private func addToBasket() {
+    @IBAction private func addToBasket() {
         // if no user is logged in, show login view
         guard let currentUser = User.currentUser() else {
             showLoginViewController()

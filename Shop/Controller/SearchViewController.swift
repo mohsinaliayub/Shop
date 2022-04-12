@@ -29,6 +29,9 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nib = UINib(nibName: "ItemInfoCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: itemCellReuseIdentifier)
 
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search..."
@@ -92,9 +95,11 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: itemCellReuseIdentifier, for: indexPath) as! ItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: itemCellReuseIdentifier, for: indexPath) as! ItemInfoCell
         
-        cell.generateCell(with: searchResults[indexPath.row])
+        cell.showCell(withItem: searchResults[indexPath.row])
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 12
         
         return cell
     }

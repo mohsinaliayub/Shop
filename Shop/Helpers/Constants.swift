@@ -41,8 +41,8 @@ struct Constants {
     static let fullName = "fullName"
     static let fullAddress = "fullAddress"
     static let onBoard = "onBoard"
-    static let purchasedItemIds = "purchasedItemIds"
     static let currentUser = "currentUser"
+    static let purchasedOrders = "purchasedOrders"
     
     // Colors
     static let appColor = UIColor(red: 0.9998469949, green: 0.4941213727, blue: 0.4734867811, alpha: 1)

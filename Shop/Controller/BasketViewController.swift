@@ -44,9 +44,6 @@ class BasketViewController: UIViewController {
         return subtotal
     }
     
-    var totalPrice = 0
-    var purchasedItemIds = [String]()
-    
     // MARK: View Lifecycle
     
     override func viewDidLoad() {
@@ -71,6 +68,10 @@ class BasketViewController: UIViewController {
     
     // MARK: Actions
     
+    @IBAction func emptyBasket(_ sender: UIBarButtonItem) {
+        emptyBasket()
+    }
+    
     @IBAction func promoCodeValueChanged(_ sender: UITextField) {
         
     }
@@ -92,6 +93,7 @@ class BasketViewController: UIViewController {
     }
     
     // MARK: Download Basket
+    
     private func loadBasketFromFirestore() {
         guard let currentUserId = User.currentUserId() else { return }
         
@@ -155,24 +157,19 @@ class BasketViewController: UIViewController {
     }
     
     private func finishPayment(token: STPToken) {
-        totalPrice = 0
-        
         for order in itemOrdersInBasket {
             purchasedOrders.append(order)
-//            purchasedItemIds.append(item.id)
-            totalPrice += Int(floor(order.item.price))
         }
         
-        // prepare total price for Stripe
-        totalPrice *= 100
+        let bagTotal = totalBasketPrice * 100
         
-        StripeClient.shared.createAndConfirmPayment(token: token, amount: totalPrice) { error in
+        StripeClient.shared.createAndConfirmPayment(token: token, amount: bagTotal) { error in
             
             if let error = error {
                 self.hud.showHUD(withText: error.localizedDescription, indicatorType: .failure, showIn: self.view)
             } else {
                 self.emptyBasket()
-                self.addItemsToPurchaseHistory(withIds: self.purchasedItemIds)
+                self.addItemsToPurchaseHistory()
                 self.hud.showHUD(withText: "Payment Successful", indicatorType: .success, showIn: self.view)
             }
             
@@ -201,7 +198,6 @@ class BasketViewController: UIViewController {
     }
     
     private func emptyBasket() {
-        purchasedItemIds.removeAll()
         itemOrdersInBasket.removeAll()
         refreshUI()
         
@@ -212,12 +208,12 @@ class BasketViewController: UIViewController {
         updateBasket(basket)
     }
     
-    private func addItemsToPurchaseHistory(withIds itemIds: [String]) {
+    private func addItemsToPurchaseHistory() {
         guard let currentUser = User.currentUser() else { return }
         
-        currentUser.purchasedItemIds += purchasedItemIds
+        currentUser.purchasedOrders += purchasedOrders
         
-        updateCurrentUserInFirestore(withValues: [Constants.purchasedItemIds: currentUser.purchasedItemIds]) { error in
+        updateCurrentUserInFirestore(withValues: [Constants.purchasedOrders: currentUser.purchasedOrdersDict]) { error in
             if let error = error {
                 print("Error updating purchased items: \(error.localizedDescription)")
                 self.hud.showHUD(withText: "Error updating purchased items", indicatorType: .failure,
