@@ -14,13 +14,14 @@ class AlgoliaService {
     
     private let appID = ApplicationID(rawValue: Constants.Algolia.applicationId)
     private let adminKey = APIKey(rawValue: Constants.Algolia.adminKey)
+    private let indexName = IndexName(rawValue: Constants.Algolia.indexName)
     
     let client: SearchClient
     let index: Index
     
     private init() {
         client = SearchClient(appID: appID, apiKey: adminKey)
-        index = client.index(withName: "item_Name")
+        index = client.index(withName: indexName)
     }
     
     func saveItemToAlgolia(_ item: Item) {

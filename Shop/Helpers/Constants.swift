@@ -58,6 +58,7 @@ struct Constants {
         public static let applicationId = "YOUR ALGOLIA APP ID"
         public static let publicKey = "YOUR ALGOLIA SEARCH-ONLY API KEY"
         public static let adminKey = "YOUR ALGOLIA ADMIN API KEY"
+        public static let indexName = "YOUR INDEX NAME"
     }
     
     struct Stripe {
