@@ -55,7 +55,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gw4-q4-u5C">
-                                <rect key="frame" x="0.0" y="88" width="414" height="381.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="456.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="7t0-kK-odz" id="oxx-Kp-7zo"/>
@@ -63,13 +63,13 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIg-VU-mvg" userLabel="Voucher and Price View">
-                                <rect key="frame" x="16" y="479.5" width="382" height="323.5"/>
+                                <rect key="frame" x="16" y="554.5" width="382" height="248.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NEk-VI-xpw" userLabel="Outer Stack View">
-                                        <rect key="frame" x="20" y="10" width="342" height="303.5"/>
+                                        <rect key="frame" x="20" y="10" width="342" height="228.5"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ky-WY-cmp" userLabel="Promo Code View">
-                                                <rect key="frame" x="0.0" y="0.0" width="342" height="60"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ky-WY-cmp" userLabel="Promo Code View">
+                                                <rect key="frame" x="0.0" y="-60" width="342" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHF-hx-4th">
                                                         <rect key="frame" x="229" y="10" width="93" height="40"/>
@@ -120,7 +120,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OZ2-V7-coF" userLabel="Subtotal Stack">
-                                                <rect key="frame" x="0.0" y="75" width="342" height="30.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="30.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtotal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1q-8b-2i5">
                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="30.5"/>
@@ -137,14 +137,14 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="473-ug-CxT">
-                                                <rect key="frame" x="0.0" y="120.5" width="342" height="1"/>
+                                                <rect key="frame" x="0.0" y="45.5" width="342" height="1"/>
                                                 <color key="backgroundColor" name="ApplicationColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="bSk-2i-exg"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="86P-qj-IBB" userLabel="Shipping Stack">
-                                                <rect key="frame" x="0.0" y="136.5" width="342" height="30.5"/>
+                                                <rect key="frame" x="0.0" y="61.5" width="342" height="30.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhr-kc-qEY">
                                                         <rect key="frame" x="0.0" y="0.0" width="68" height="30.5"/>
@@ -161,14 +161,14 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLE-oq-TBS">
-                                                <rect key="frame" x="0.0" y="182" width="342" height="1"/>
+                                                <rect key="frame" x="0.0" y="107" width="342" height="1"/>
                                                 <color key="backgroundColor" name="ApplicationColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="GKH-YR-U1A"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4zX-Ee-pop" userLabel="Bag Total Stack">
-                                                <rect key="frame" x="0.0" y="198" width="342" height="30.5"/>
+                                                <rect key="frame" x="0.0" y="123" width="342" height="30.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bag total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnJ-ud-qqp">
                                                         <rect key="frame" x="0.0" y="0.0" width="70.5" height="30.5"/>
@@ -196,7 +196,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFn-cy-r2h">
-                                                <rect key="frame" x="0.0" y="243.5" width="342" height="60"/>
+                                                <rect key="frame" x="0.0" y="168.5" width="342" height="60"/>
                                                 <color key="backgroundColor" name="AppButtonColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="OEv-Qp-Ovl"/>
@@ -458,7 +458,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDE-SD-Urm">
-                                <rect key="frame" x="0.0" y="88" width="414" height="619"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="618.5"/>
                                 <connections>
                                     <segue destination="aGO-5j-0aC" kind="embed" id="1bn-ja-hLs"/>
                                 </connections>
