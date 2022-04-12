@@ -21,6 +21,7 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var addToCartButton: UIButton!
     private var itemImagesViewController: ItemImagesViewController!
     
     // properties
@@ -44,6 +45,7 @@ class ItemDetailViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        changeCartButtonState()
         downloadPictures()
         
         if let childVC = self.children.first as? ItemImagesViewController {
@@ -57,11 +59,29 @@ class ItemDetailViewController: UIViewController {
     
     // MARK: - Set Up UI
     
+    private func changeCartButtonState() {
+        self.addToCartButton.isEnabled = true
+        guard let currentUser = User.currentUser() else { return }
+        
+        downloadBasketFromFirestore(for: currentUser.id) { basket, error in
+            guard let basket = basket else {
+                return
+            }
+
+            if let _ = basket.itemOrders.firstIndex(where: { $0.itemId == self.item.id }) {
+                self.addToCartButton.isEnabled = false
+                self.addToCartButton.backgroundColor = .lightGray
+            }
+        }
+    }
+    
     private func setupUI() {
-        title = item.name
         nameLabel.text = item.name
         priceLabel.text = convertToCurrency(item.price)
         descriptionLabel.text = item.description
+        
+        addToCartButton.setTitle("Already in cart", for: .disabled)
+        addToCartButton.setTitleColor(.white, for: .disabled)
     }
     
     private func downloadPictures() {
@@ -98,6 +118,7 @@ class ItemDetailViewController: UIViewController {
             // basket already exists, append an item and update in the firestore
             basket.addItemOrder(withId: self.item.id, count: 1)
             self.updateBasket(basket)
+            self.changeCartButtonState()
         }
         
     }

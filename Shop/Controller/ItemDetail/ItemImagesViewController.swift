@@ -30,7 +30,7 @@ class ItemImagesViewController: UIPageViewController {
         populateViews()
         
         if let firstVC = items.first {
-            setViewControllers([firstVC], direction: .forward, animated: true)
+            setViewControllers([firstVC], direction: .forward, animated: false)
         }
     }
     

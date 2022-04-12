@@ -537,6 +537,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="rsf-S6-9Qj"/>
                     <connections>
+                        <outlet property="addToCartButton" destination="hua-DA-Buf" id="fbQ-Ov-vWK"/>
                         <outlet property="descriptionLabel" destination="zhe-zG-fqO" id="pp8-Sv-3we"/>
                         <outlet property="itemDetailView" destination="Cr1-FW-hiV" id="lv4-QT-STv"/>
                         <outlet property="itemImagesContainer" destination="JDE-SD-Urm" id="h34-w6-kw6"/>
